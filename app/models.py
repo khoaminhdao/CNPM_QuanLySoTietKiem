@@ -107,11 +107,7 @@ class NhanVienView(AuthenticatedView):
 
 
 class ChucVuView(AuthenticatedView):
-<<<<<<< HEAD
-    column_labels = dict(maCv='Mã chức vụ', tenCV='Tên chức vụ')
-=======
     column_labels = dict(maCV='Mã chức vụ', tenCV='Tên chức vụ')
->>>>>>> master
 
 
 class QuyDinhView(AuthenticatedView):
