@@ -1,11 +1,20 @@
 @charset "UTF-8";
 
 /*!
+<<<<<<< Updated upstream
 Animate.css - http://daneden.me/animate
 Licensed under the MIT license - http://opensource.org/licenses/MIT
 
 Copyright (c) 2015 Daniel Eden
 */
+=======
+ * animate.css -http://daneden.me/animate
+ * Version - 3.6.0
+ * Licensed under the MIT license - http://opensource.org/licenses/MIT
+ *
+ * Copyright (c) 2018 Daniel Eden
+ */
+>>>>>>> Stashed changes
 
 .animated {
   -webkit-animation-duration: 1s;
@@ -13,6 +22,7 @@ Copyright (c) 2015 Daniel Eden
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 }
+<<<<<<< Updated upstream
 .animated-fast {
   -webkit-animation-duration: .2s;
   animation-duration: .2s;
@@ -25,12 +35,15 @@ Copyright (c) 2015 Daniel Eden
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 }
+=======
+>>>>>>> Stashed changes
 
 .animated.infinite {
   -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
 }
 
+<<<<<<< Updated upstream
 .animated.hinge {
   -webkit-animation-duration: 2s;
   animation-duration: 2s;
@@ -59,24 +72,53 @@ Copyright (c) 2015 Daniel Eden
   40%, 43% {
     -webkit-animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
     animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+=======
+@-webkit-keyframes bounce {
+  from,
+  20%,
+  53%,
+  80%,
+  to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  40%,
+  43% {
+    -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+>>>>>>> Stashed changes
     -webkit-transform: translate3d(0, -30px, 0);
     transform: translate3d(0, -30px, 0);
   }
 
   70% {
+<<<<<<< Updated upstream
     -webkit-animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
     animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+=======
+    -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+>>>>>>> Stashed changes
     -webkit-transform: translate3d(0, -15px, 0);
     transform: translate3d(0, -15px, 0);
   }
 
   90% {
+<<<<<<< Updated upstream
     -webkit-transform: translate3d(0,-4px,0);
     transform: translate3d(0,-4px,0);
+=======
+    -webkit-transform: translate3d(0, -4px, 0);
+    transform: translate3d(0, -4px, 0);
+>>>>>>> Stashed changes
   }
 }
 
 @keyframes bounce {
+<<<<<<< Updated upstream
   from, 20%, 53%, 80%, to {
     -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
     animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
@@ -87,20 +129,47 @@ Copyright (c) 2015 Daniel Eden
   40%, 43% {
     -webkit-animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
     animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+=======
+  from,
+  20%,
+  53%,
+  80%,
+  to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  40%,
+  43% {
+    -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+>>>>>>> Stashed changes
     -webkit-transform: translate3d(0, -30px, 0);
     transform: translate3d(0, -30px, 0);
   }
 
   70% {
+<<<<<<< Updated upstream
     -webkit-animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
     animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+=======
+    -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+>>>>>>> Stashed changes
     -webkit-transform: translate3d(0, -15px, 0);
     transform: translate3d(0, -15px, 0);
   }
 
   90% {
+<<<<<<< Updated upstream
     -webkit-transform: translate3d(0,-4px,0);
     transform: translate3d(0,-4px,0);
+=======
+    -webkit-transform: translate3d(0, -4px, 0);
+    transform: translate3d(0, -4px, 0);
+>>>>>>> Stashed changes
   }
 }
 
@@ -112,21 +181,43 @@ Copyright (c) 2015 Daniel Eden
 }
 
 @-webkit-keyframes flash {
+<<<<<<< Updated upstream
   from, 50%, to {
     opacity: 1;
   }
 
   25%, 75% {
+=======
+  from,
+  50%,
+  to {
+    opacity: 1;
+  }
+
+  25%,
+  75% {
+>>>>>>> Stashed changes
     opacity: 0;
   }
 }
 
 @keyframes flash {
+<<<<<<< Updated upstream
   from, 50%, to {
     opacity: 1;
   }
 
   25%, 75% {
+=======
+  from,
+  50%,
+  to {
+    opacity: 1;
+  }
+
+  25%,
+  75% {
+>>>>>>> Stashed changes
     opacity: 0;
   }
 }
@@ -199,6 +290,7 @@ Copyright (c) 2015 Daniel Eden
   }
 
   65% {
+<<<<<<< Updated upstream
     -webkit-transform: scale3d(.95, 1.05, 1);
     transform: scale3d(.95, 1.05, 1);
   }
@@ -206,6 +298,15 @@ Copyright (c) 2015 Daniel Eden
   75% {
     -webkit-transform: scale3d(1.05, .95, 1);
     transform: scale3d(1.05, .95, 1);
+=======
+    -webkit-transform: scale3d(0.95, 1.05, 1);
+    transform: scale3d(0.95, 1.05, 1);
+  }
+
+  75% {
+    -webkit-transform: scale3d(1.05, 0.95, 1);
+    transform: scale3d(1.05, 0.95, 1);
+>>>>>>> Stashed changes
   }
 
   to {
@@ -236,6 +337,7 @@ Copyright (c) 2015 Daniel Eden
   }
 
   65% {
+<<<<<<< Updated upstream
     -webkit-transform: scale3d(.95, 1.05, 1);
     transform: scale3d(.95, 1.05, 1);
   }
@@ -243,6 +345,15 @@ Copyright (c) 2015 Daniel Eden
   75% {
     -webkit-transform: scale3d(1.05, .95, 1);
     transform: scale3d(1.05, .95, 1);
+=======
+    -webkit-transform: scale3d(0.95, 1.05, 1);
+    transform: scale3d(0.95, 1.05, 1);
+  }
+
+  75% {
+    -webkit-transform: scale3d(1.05, 0.95, 1);
+    transform: scale3d(1.05, 0.95, 1);
+>>>>>>> Stashed changes
   }
 
   to {
@@ -257,34 +368,74 @@ Copyright (c) 2015 Daniel Eden
 }
 
 @-webkit-keyframes shake {
+<<<<<<< Updated upstream
   from, to {
+=======
+  from,
+  to {
+>>>>>>> Stashed changes
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
   }
 
+<<<<<<< Updated upstream
   10%, 30%, 50%, 70%, 90% {
+=======
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+>>>>>>> Stashed changes
     -webkit-transform: translate3d(-10px, 0, 0);
     transform: translate3d(-10px, 0, 0);
   }
 
+<<<<<<< Updated upstream
   20%, 40%, 60%, 80% {
+=======
+  20%,
+  40%,
+  60%,
+  80% {
+>>>>>>> Stashed changes
     -webkit-transform: translate3d(10px, 0, 0);
     transform: translate3d(10px, 0, 0);
   }
 }
 
 @keyframes shake {
+<<<<<<< Updated upstream
   from, to {
+=======
+  from,
+  to {
+>>>>>>> Stashed changes
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
   }
 
+<<<<<<< Updated upstream
   10%, 30%, 50%, 70%, 90% {
+=======
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+>>>>>>> Stashed changes
     -webkit-transform: translate3d(-10px, 0, 0);
     transform: translate3d(-10px, 0, 0);
   }
 
+<<<<<<< Updated upstream
   20%, 40%, 60%, 80% {
+=======
+  20%,
+  40%,
+  60%,
+  80% {
+>>>>>>> Stashed changes
     -webkit-transform: translate3d(10px, 0, 0);
     transform: translate3d(10px, 0, 0);
   }
@@ -295,6 +446,80 @@ Copyright (c) 2015 Daniel Eden
   animation-name: shake;
 }
 
+<<<<<<< Updated upstream
+=======
+@-webkit-keyframes headShake {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  6.5% {
+    -webkit-transform: translateX(-6px) rotateY(-9deg);
+    transform: translateX(-6px) rotateY(-9deg);
+  }
+
+  18.5% {
+    -webkit-transform: translateX(5px) rotateY(7deg);
+    transform: translateX(5px) rotateY(7deg);
+  }
+
+  31.5% {
+    -webkit-transform: translateX(-3px) rotateY(-5deg);
+    transform: translateX(-3px) rotateY(-5deg);
+  }
+
+  43.5% {
+    -webkit-transform: translateX(2px) rotateY(3deg);
+    transform: translateX(2px) rotateY(3deg);
+  }
+
+  50% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+@keyframes headShake {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  6.5% {
+    -webkit-transform: translateX(-6px) rotateY(-9deg);
+    transform: translateX(-6px) rotateY(-9deg);
+  }
+
+  18.5% {
+    -webkit-transform: translateX(5px) rotateY(7deg);
+    transform: translateX(5px) rotateY(7deg);
+  }
+
+  31.5% {
+    -webkit-transform: translateX(-3px) rotateY(-5deg);
+    transform: translateX(-3px) rotateY(-5deg);
+  }
+
+  43.5% {
+    -webkit-transform: translateX(2px) rotateY(3deg);
+    transform: translateX(2px) rotateY(3deg);
+  }
+
+  50% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+.headShake {
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-name: headShake;
+  animation-name: headShake;
+}
+
+>>>>>>> Stashed changes
 @-webkit-keyframes swing {
   20% {
     -webkit-transform: rotate3d(0, 0, 1, 15deg);
@@ -362,17 +587,36 @@ Copyright (c) 2015 Daniel Eden
     transform: scale3d(1, 1, 1);
   }
 
+<<<<<<< Updated upstream
   10%, 20% {
     -webkit-transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
     transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
   }
 
   30%, 50%, 70%, 90% {
+=======
+  10%,
+  20% {
+    -webkit-transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+    transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+  }
+
+  30%,
+  50%,
+  70%,
+  90% {
+>>>>>>> Stashed changes
     -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
     transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
   }
 
+<<<<<<< Updated upstream
   40%, 60%, 80% {
+=======
+  40%,
+  60%,
+  80% {
+>>>>>>> Stashed changes
     -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
     transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
   }
@@ -389,17 +633,36 @@ Copyright (c) 2015 Daniel Eden
     transform: scale3d(1, 1, 1);
   }
 
+<<<<<<< Updated upstream
   10%, 20% {
     -webkit-transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
     transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
   }
 
   30%, 50%, 70%, 90% {
+=======
+  10%,
+  20% {
+    -webkit-transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+    transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+  }
+
+  30%,
+  50%,
+  70%,
+  90% {
+>>>>>>> Stashed changes
     -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
     transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
   }
 
+<<<<<<< Updated upstream
   40%, 60%, 80% {
+=======
+  40%,
+  60%,
+  80% {
+>>>>>>> Stashed changes
     -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
     transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
   }
@@ -419,8 +682,13 @@ Copyright (c) 2015 Daniel Eden
 
 @-webkit-keyframes wobble {
   from {
+<<<<<<< Updated upstream
     -webkit-transform: none;
     transform: none;
+=======
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+>>>>>>> Stashed changes
   }
 
   15% {
@@ -449,15 +717,25 @@ Copyright (c) 2015 Daniel Eden
   }
 
   to {
+<<<<<<< Updated upstream
     -webkit-transform: none;
     transform: none;
+=======
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+>>>>>>> Stashed changes
   }
 }
 
 @keyframes wobble {
   from {
+<<<<<<< Updated upstream
     -webkit-transform: none;
     transform: none;
+=======
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+>>>>>>> Stashed changes
   }
 
   15% {
@@ -486,8 +764,13 @@ Copyright (c) 2015 Daniel Eden
   }
 
   to {
+<<<<<<< Updated upstream
     -webkit-transform: none;
     transform: none;
+=======
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+>>>>>>> Stashed changes
   }
 }
 
@@ -497,9 +780,17 @@ Copyright (c) 2015 Daniel Eden
 }
 
 @-webkit-keyframes jello {
+<<<<<<< Updated upstream
   from, 11.1%, to {
     -webkit-transform: none;
     transform: none;
+=======
+  from,
+  11.1%,
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+>>>>>>> Stashed changes
   }
 
   22.2% {
@@ -539,9 +830,17 @@ Copyright (c) 2015 Daniel Eden
 }
 
 @keyframes jello {
+<<<<<<< Updated upstream
   from, 11.1%, to {
     -webkit-transform: none;
     transform: none;
+=======
+  from,
+  11.1%,
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+>>>>>>> Stashed changes
   }
 
   22.2% {
@@ -588,15 +887,31 @@ Copyright (c) 2015 Daniel Eden
 }
 
 @-webkit-keyframes bounceIn {
+<<<<<<< Updated upstream
   from, 20%, 40%, 60%, 80%, to {
     -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
     animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+=======
+  from,
+  20%,
+  40%,
+  60%,
+  80%,
+  to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+>>>>>>> Stashed changes
   }
 
   0% {
     opacity: 0;
+<<<<<<< Updated upstream
     -webkit-transform: scale3d(.3, .3, .3);
     transform: scale3d(.3, .3, .3);
+=======
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+>>>>>>> Stashed changes
   }
 
   20% {
@@ -605,8 +920,13 @@ Copyright (c) 2015 Daniel Eden
   }
 
   40% {
+<<<<<<< Updated upstream
     -webkit-transform: scale3d(.9, .9, .9);
     transform: scale3d(.9, .9, .9);
+=======
+    -webkit-transform: scale3d(0.9, 0.9, 0.9);
+    transform: scale3d(0.9, 0.9, 0.9);
+>>>>>>> Stashed changes
   }
 
   60% {
@@ -616,8 +936,13 @@ Copyright (c) 2015 Daniel Eden
   }
 
   80% {
+<<<<<<< Updated upstream
     -webkit-transform: scale3d(.97, .97, .97);
     transform: scale3d(.97, .97, .97);
+=======
+    -webkit-transform: scale3d(0.97, 0.97, 0.97);
+    transform: scale3d(0.97, 0.97, 0.97);
+>>>>>>> Stashed changes
   }
 
   to {
@@ -628,15 +953,31 @@ Copyright (c) 2015 Daniel Eden
 }
 
 @keyframes bounceIn {
+<<<<<<< Updated upstream
   from, 20%, 40%, 60%, 80%, to {
     -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
     animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+=======
+  from,
+  20%,
+  40%,
+  60%,
+  80%,
+  to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+>>>>>>> Stashed changes
   }
 
   0% {
     opacity: 0;
+<<<<<<< Updated upstream
     -webkit-transform: scale3d(.3, .3, .3);
     transform: scale3d(.3, .3, .3);
+=======
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+>>>>>>> Stashed changes
   }
 
   20% {
@@ -645,8 +986,13 @@ Copyright (c) 2015 Daniel Eden
   }
 
   40% {
+<<<<<<< Updated upstream
     -webkit-transform: scale3d(.9, .9, .9);
     transform: scale3d(.9, .9, .9);
+=======
+    -webkit-transform: scale3d(0.9, 0.9, 0.9);
+    transform: scale3d(0.9, 0.9, 0.9);
+>>>>>>> Stashed changes
   }
 
   60% {
@@ -656,8 +1002,13 @@ Copyright (c) 2015 Daniel Eden
   }
 
   80% {
+<<<<<<< Updated upstream
     -webkit-transform: scale3d(.97, .97, .97);
     transform: scale3d(.97, .97, .97);
+=======
+    -webkit-transform: scale3d(0.97, 0.97, 0.97);
+    transform: scale3d(0.97, 0.97, 0.97);
+>>>>>>> Stashed changes
   }
 
   to {
@@ -668,14 +1019,29 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .bounceIn {
+<<<<<<< Updated upstream
+=======
+  -webkit-animation-duration: 0.75s;
+  animation-duration: 0.75s;
+>>>>>>> Stashed changes
   -webkit-animation-name: bounceIn;
   animation-name: bounceIn;
 }
 
 @-webkit-keyframes bounceInDown {
+<<<<<<< Updated upstream
   from, 60%, 75%, 90%, to {
     -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
     animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+=======
+  from,
+  60%,
+  75%,
+  90%,
+  to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+>>>>>>> Stashed changes
   }
 
   0% {
@@ -701,15 +1067,30 @@ Copyright (c) 2015 Daniel Eden
   }
 
   to {
+<<<<<<< Updated upstream
     -webkit-transform: none;
     transform: none;
+=======
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+>>>>>>> Stashed changes
   }
 }
 
 @keyframes bounceInDown {
+<<<<<<< Updated upstream
   from, 60%, 75%, 90%, to {
     -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
     animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+=======
+  from,
+  60%,
+  75%,
+  90%,
+  to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+>>>>>>> Stashed changes
   }
 
   0% {
@@ -735,8 +1116,13 @@ Copyright (c) 2015 Daniel Eden
   }
 
   to {
+<<<<<<< Updated upstream
     -webkit-transform: none;
     transform: none;
+=======
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+>>>>>>> Stashed changes
   }
 }
 
@@ -746,9 +1132,19 @@ Copyright (c) 2015 Daniel Eden
 }
 
 @-webkit-keyframes bounceInLeft {
+<<<<<<< Updated upstream
   from, 60%, 75%, 90%, to {
     -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
     animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+=======
+  from,
+  60%,
+  75%,
+  90%,
+  to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+>>>>>>> Stashed changes
   }
 
   0% {
@@ -774,15 +1170,30 @@ Copyright (c) 2015 Daniel Eden
   }
 
   to {
+<<<<<<< Updated upstream
     -webkit-transform: none;
     transform: none;
+=======
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+>>>>>>> Stashed changes
   }
 }
 
 @keyframes bounceInLeft {
+<<<<<<< Updated upstream
   from, 60%, 75%, 90%, to {
     -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
     animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+=======
+  from,
+  60%,
+  75%,
+  90%,
+  to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+>>>>>>> Stashed changes
   }
 
   0% {
@@ -808,8 +1219,13 @@ Copyright (c) 2015 Daniel Eden
   }
 
   to {
+<<<<<<< Updated upstream
     -webkit-transform: none;
     transform: none;
+=======
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+>>>>>>> Stashed changes
   }
 }
 
@@ -819,9 +1235,19 @@ Copyright (c) 2015 Daniel Eden
 }
 
 @-webkit-keyframes bounceInRight {
+<<<<<<< Updated upstream
   from, 60%, 75%, 90%, to {
     -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
     animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+=======
+  from,
+  60%,
+  75%,
+  90%,
+  to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+>>>>>>> Stashed changes
   }
 
   from {
@@ -847,15 +1273,30 @@ Copyright (c) 2015 Daniel Eden
   }
 
   to {
+<<<<<<< Updated upstream
     -webkit-transform: none;
     transform: none;
+=======
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+>>>>>>> Stashed changes
   }
 }
 
 @keyframes bounceInRight {
+<<<<<<< Updated upstream
   from, 60%, 75%, 90%, to {
     -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
     animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+=======
+  from,
+  60%,
+  75%,
+  90%,
+  to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+>>>>>>> Stashed changes
   }
 
   from {
@@ -881,8 +1322,13 @@ Copyright (c) 2015 Daniel Eden
   }
 
   to {
+<<<<<<< Updated upstream
     -webkit-transform: none;
     transform: none;
+=======
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+>>>>>>> Stashed changes
   }
 }
 
@@ -892,9 +1338,19 @@ Copyright (c) 2015 Daniel Eden
 }
 
 @-webkit-keyframes bounceInUp {
+<<<<<<< Updated upstream
   from, 60%, 75%, 90%, to {
     -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
     animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+=======
+  from,
+  60%,
+  75%,
+  90%,
+  to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+>>>>>>> Stashed changes
   }
 
   from {
@@ -926,9 +1382,19 @@ Copyright (c) 2015 Daniel Eden
 }
 
 @keyframes bounceInUp {
+<<<<<<< Updated upstream
   from, 60%, 75%, 90%, to {
     -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
     animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+=======
+  from,
+  60%,
+  75%,
+  90%,
+  to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+>>>>>>> Stashed changes
   }
 
   from {
@@ -966,11 +1432,20 @@ Copyright (c) 2015 Daniel Eden
 
 @-webkit-keyframes bounceOut {
   20% {
+<<<<<<< Updated upstream
     -webkit-transform: scale3d(.9, .9, .9);
     transform: scale3d(.9, .9, .9);
   }
 
   50%, 55% {
+=======
+    -webkit-transform: scale3d(0.9, 0.9, 0.9);
+    transform: scale3d(0.9, 0.9, 0.9);
+  }
+
+  50%,
+  55% {
+>>>>>>> Stashed changes
     opacity: 1;
     -webkit-transform: scale3d(1.1, 1.1, 1.1);
     transform: scale3d(1.1, 1.1, 1.1);
@@ -978,18 +1453,32 @@ Copyright (c) 2015 Daniel Eden
 
   to {
     opacity: 0;
+<<<<<<< Updated upstream
     -webkit-transform: scale3d(.3, .3, .3);
     transform: scale3d(.3, .3, .3);
+=======
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+>>>>>>> Stashed changes
   }
 }
 
 @keyframes bounceOut {
   20% {
+<<<<<<< Updated upstream
     -webkit-transform: scale3d(.9, .9, .9);
     transform: scale3d(.9, .9, .9);
   }
 
   50%, 55% {
+=======
+    -webkit-transform: scale3d(0.9, 0.9, 0.9);
+    transform: scale3d(0.9, 0.9, 0.9);
+  }
+
+  50%,
+  55% {
+>>>>>>> Stashed changes
     opacity: 1;
     -webkit-transform: scale3d(1.1, 1.1, 1.1);
     transform: scale3d(1.1, 1.1, 1.1);
@@ -997,12 +1486,22 @@ Copyright (c) 2015 Daniel Eden
 
   to {
     opacity: 0;
+<<<<<<< Updated upstream
     -webkit-transform: scale3d(.3, .3, .3);
     transform: scale3d(.3, .3, .3);
+=======
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+>>>>>>> Stashed changes
   }
 }
 
 .bounceOut {
+<<<<<<< Updated upstream
+=======
+  -webkit-animation-duration: 0.75s;
+  animation-duration: 0.75s;
+>>>>>>> Stashed changes
   -webkit-animation-name: bounceOut;
   animation-name: bounceOut;
 }
@@ -1013,7 +1512,12 @@ Copyright (c) 2015 Daniel Eden
     transform: translate3d(0, 10px, 0);
   }
 
+<<<<<<< Updated upstream
   40%, 45% {
+=======
+  40%,
+  45% {
+>>>>>>> Stashed changes
     opacity: 1;
     -webkit-transform: translate3d(0, -20px, 0);
     transform: translate3d(0, -20px, 0);
@@ -1032,7 +1536,12 @@ Copyright (c) 2015 Daniel Eden
     transform: translate3d(0, 10px, 0);
   }
 
+<<<<<<< Updated upstream
   40%, 45% {
+=======
+  40%,
+  45% {
+>>>>>>> Stashed changes
     opacity: 1;
     -webkit-transform: translate3d(0, -20px, 0);
     transform: translate3d(0, -20px, 0);
@@ -1122,7 +1631,12 @@ Copyright (c) 2015 Daniel Eden
     transform: translate3d(0, -10px, 0);
   }
 
+<<<<<<< Updated upstream
   40%, 45% {
+=======
+  40%,
+  45% {
+>>>>>>> Stashed changes
     opacity: 1;
     -webkit-transform: translate3d(0, 20px, 0);
     transform: translate3d(0, 20px, 0);
@@ -1141,7 +1655,12 @@ Copyright (c) 2015 Daniel Eden
     transform: translate3d(0, -10px, 0);
   }
 
+<<<<<<< Updated upstream
   40%, 45% {
+=======
+  40%,
+  45% {
+>>>>>>> Stashed changes
     opacity: 1;
     -webkit-transform: translate3d(0, 20px, 0);
     transform: translate3d(0, 20px, 0);
@@ -1162,36 +1681,48 @@ Copyright (c) 2015 Daniel Eden
 @-webkit-keyframes fadeIn {
   from {
     opacity: 0;
+<<<<<<< Updated upstream
     visibility: hidden;
     -ms-transform: scale(0.95);
     -webkit-transform: scale(0.95);
     transform: scale(0.95);
+=======
+>>>>>>> Stashed changes
   }
 
   to {
     opacity: 1;
+<<<<<<< Updated upstream
     visibility: visible;
     -ms-transform: scale(1.0);
     -webkit-transform: scale(1.0);
     transform: scale(1.0);
+=======
+>>>>>>> Stashed changes
   }
 }
 
 @keyframes fadeIn {
   from {
     opacity: 0;
+<<<<<<< Updated upstream
     visibility: hidden;
     -ms-transform: scale(0.95);
     -webkit-transform: scale(0.95);
     transform: scale(0.95);
+=======
+>>>>>>> Stashed changes
   }
 
   to {
     opacity: 1;
+<<<<<<< Updated upstream
     visibility: visible;
     -ms-transform: scale(1.0);
     -webkit-transform: scale(1.0);
     transform: scale(1.0);
+=======
+>>>>>>> Stashed changes
   }
 }
 
@@ -1203,36 +1734,56 @@ Copyright (c) 2015 Daniel Eden
 @-webkit-keyframes fadeInDown {
   from {
     opacity: 0;
+<<<<<<< Updated upstream
     visibility: hidden;
     /*-webkit-transform: translate3d(0, -100%, 0);
     transform: translate3d(0, -100%, 0);*/
     -webkit-transform: translate3d(0, -50px, 0);
     transform: translate3d(0, -50px, 0);
+=======
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+>>>>>>> Stashed changes
   }
 
   to {
     opacity: 1;
+<<<<<<< Updated upstream
     visibility: visible;
     -webkit-transform: none;
     transform: none;
+=======
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+>>>>>>> Stashed changes
   }
 }
 
 @keyframes fadeInDown {
   from {
     opacity: 0;
+<<<<<<< Updated upstream
     visibility: hidden;
     /*-webkit-transform: translate3d(0, -100%, 0);
     transform: translate3d(0, -100%, 0);*/
     -webkit-transform: translate3d(0, -50px, 0);
     transform: translate3d(0, -50px, 0);
+=======
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+>>>>>>> Stashed changes
   }
 
   to {
     opacity: 1;
+<<<<<<< Updated upstream
     visibility: visible;
     -webkit-transform: none;
     transform: none;
+=======
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+>>>>>>> Stashed changes
   }
 }
 
@@ -1250,8 +1801,13 @@ Copyright (c) 2015 Daniel Eden
 
   to {
     opacity: 1;
+<<<<<<< Updated upstream
     -webkit-transform: none;
     transform: none;
+=======
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+>>>>>>> Stashed changes
   }
 }
 
@@ -1264,8 +1820,13 @@ Copyright (c) 2015 Daniel Eden
 
   to {
     opacity: 1;
+<<<<<<< Updated upstream
     -webkit-transform: none;
     transform: none;
+=======
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+>>>>>>> Stashed changes
   }
 }
 
@@ -1277,36 +1838,56 @@ Copyright (c) 2015 Daniel Eden
 @-webkit-keyframes fadeInLeft {
   from {
     opacity: 0;
+<<<<<<< Updated upstream
     visibility: hidden;
     /*-webkit-transform: translate3d(-100%, 0, 0);
     transform: translate3d(-100%, 0, 0);*/
     -webkit-transform: translate3d(-50px, 0, 0);
     transform: translate3d(-50px, 0, 0);
+=======
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+>>>>>>> Stashed changes
   }
 
   to {
     opacity: 1;
+<<<<<<< Updated upstream
     visibility: visible;
     -webkit-transform: none;
     transform: none;
+=======
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+>>>>>>> Stashed changes
   }
 }
 
 @keyframes fadeInLeft {
   from {
     opacity: 0;
+<<<<<<< Updated upstream
     visibility: hidden;
     /*-webkit-transform: translate3d(-100%, 0, 0);
     transform: translate3d(-100%, 0, 0);*/
     -webkit-transform: translate3d(-50px, 0, 0);
     transform: translate3d(-50px, 0, 0);
+=======
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+>>>>>>> Stashed changes
   }
 
   to {
     opacity: 1;
+<<<<<<< Updated upstream
     visibility: visible;
     -webkit-transform: none;
     transform: none;
+=======
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+>>>>>>> Stashed changes
   }
 }
 
@@ -1324,8 +1905,13 @@ Copyright (c) 2015 Daniel Eden
 
   to {
     opacity: 1;
+<<<<<<< Updated upstream
     -webkit-transform: none;
     transform: none;
+=======
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+>>>>>>> Stashed changes
   }
 }
 
@@ -1338,8 +1924,13 @@ Copyright (c) 2015 Daniel Eden
 
   to {
     opacity: 1;
+<<<<<<< Updated upstream
     -webkit-transform: none;
     transform: none;
+=======
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+>>>>>>> Stashed changes
   }
 }
 
@@ -1351,36 +1942,56 @@ Copyright (c) 2015 Daniel Eden
 @-webkit-keyframes fadeInRight {
   from {
     opacity: 0;
+<<<<<<< Updated upstream
     visibility: hidden;
     /*-webkit-transform: translate3d(100%, 0, 0);
     transform: translate3d(100%, 0, 0);*/
     -webkit-transform: translate3d(50px, 0, 0);
     transform: translate3d(50px, 0, 0);
+=======
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+>>>>>>> Stashed changes
   }
 
   to {
     opacity: 1;
+<<<<<<< Updated upstream
     visibility: visible;
     -webkit-transform: none;
     transform: none;
+=======
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+>>>>>>> Stashed changes
   }
 }
 
 @keyframes fadeInRight {
   from {
     opacity: 0;
+<<<<<<< Updated upstream
     visibility: hidden;
     /*-webkit-transform: translate3d(100%, 0, 0);
     transform: translate3d(100%, 0, 0);*/
     -webkit-transform: translate3d(50px, 0, 0);
     transform: translate3d(50px, 0, 0);
+=======
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+>>>>>>> Stashed changes
   }
 
   to {
     opacity: 1;
+<<<<<<< Updated upstream
     visibility: visible;
     -webkit-transform: none;
     transform: none;
+=======
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+>>>>>>> Stashed changes
   }
 }
 
@@ -1398,8 +2009,13 @@ Copyright (c) 2015 Daniel Eden
 
   to {
     opacity: 1;
+<<<<<<< Updated upstream
     -webkit-transform: none;
     transform: none;
+=======
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+>>>>>>> Stashed changes
   }
 }
 
@@ -1412,8 +2028,13 @@ Copyright (c) 2015 Daniel Eden
 
   to {
     opacity: 1;
+<<<<<<< Updated upstream
     -webkit-transform: none;
     transform: none;
+=======
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+>>>>>>> Stashed changes
   }
 }
 
@@ -1425,24 +2046,35 @@ Copyright (c) 2015 Daniel Eden
 @-webkit-keyframes fadeInUp {
   from {
     opacity: 0;
+<<<<<<< Updated upstream
     visibility: hidden;
     /*-webkit-transform: translate3d(0, 100%, 0);
     transform: translate3d(0, 100%, 0);*/
     -webkit-transform: translate3d(0, 40px, 0);
     transform: translate3d(0, 40px, 0);
+=======
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+>>>>>>> Stashed changes
   }
 
   to {
     opacity: 1;
+<<<<<<< Updated upstream
     visibility: visible;
     -webkit-transform: none;
     transform: none;
+=======
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+>>>>>>> Stashed changes
   }
 }
 
 @keyframes fadeInUp {
   from {
     opacity: 0;
+<<<<<<< Updated upstream
     visibility: hidden;
     /*-webkit-transform: translate3d(0, 100%, 0);
     transform: translate3d(0, 100%, 0);*/
@@ -1455,6 +2087,16 @@ Copyright (c) 2015 Daniel Eden
     opacity: 1;
     -webkit-transform: none;
     transform: none;
+=======
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+>>>>>>> Stashed changes
   }
 }
 
@@ -1463,6 +2105,7 @@ Copyright (c) 2015 Daniel Eden
   animation-name: fadeInUp;
 }
 
+<<<<<<< Updated upstream
 @-webkit-keyframes fadeInUpMenu {
   from {
     opacity: 0;
@@ -1504,6 +2147,8 @@ Copyright (c) 2015 Daniel Eden
   animation-name: fadeInUpMenu;
 }
 
+=======
+>>>>>>> Stashed changes
 @-webkit-keyframes fadeInUpBig {
   from {
     opacity: 0;
@@ -1513,8 +2158,13 @@ Copyright (c) 2015 Daniel Eden
 
   to {
     opacity: 1;
+<<<<<<< Updated upstream
     -webkit-transform: none;
     transform: none;
+=======
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+>>>>>>> Stashed changes
   }
 }
 
@@ -1527,8 +2177,13 @@ Copyright (c) 2015 Daniel Eden
 
   to {
     opacity: 1;
+<<<<<<< Updated upstream
     -webkit-transform: none;
     transform: none;
+=======
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+>>>>>>> Stashed changes
   }
 }
 
@@ -1565,28 +2220,44 @@ Copyright (c) 2015 Daniel Eden
 @-webkit-keyframes fadeOutDown {
   from {
     opacity: 1;
+<<<<<<< Updated upstream
     visibility: visible;
+=======
+>>>>>>> Stashed changes
   }
 
   to {
     opacity: 0;
+<<<<<<< Updated upstream
     visibility: hidden;
     -webkit-transform: translate3d(0, 40px, 0);
     transform: translate3d(0, 40px, 0);
+=======
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+>>>>>>> Stashed changes
   }
 }
 
 @keyframes fadeOutDown {
   from {
     opacity: 1;
+<<<<<<< Updated upstream
     visibility: visible;
+=======
+>>>>>>> Stashed changes
   }
 
   to {
     opacity: 0;
+<<<<<<< Updated upstream
     visibility: hidden;
     -webkit-transform: translate3d(0, 40px, 0);
     transform: translate3d(0, 40px, 0);
+=======
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+>>>>>>> Stashed changes
   }
 }
 
@@ -1821,8 +2492,13 @@ Copyright (c) 2015 Daniel Eden
   }
 
   80% {
+<<<<<<< Updated upstream
     -webkit-transform: perspective(400px) scale3d(.95, .95, .95);
     transform: perspective(400px) scale3d(.95, .95, .95);
+=======
+    -webkit-transform: perspective(400px) scale3d(0.95, 0.95, 0.95);
+    transform: perspective(400px) scale3d(0.95, 0.95, 0.95);
+>>>>>>> Stashed changes
     -webkit-animation-timing-function: ease-in;
     animation-timing-function: ease-in;
   }
@@ -1858,8 +2534,13 @@ Copyright (c) 2015 Daniel Eden
   }
 
   80% {
+<<<<<<< Updated upstream
     -webkit-transform: perspective(400px) scale3d(.95, .95, .95);
     transform: perspective(400px) scale3d(.95, .95, .95);
+=======
+    -webkit-transform: perspective(400px) scale3d(0.95, 0.95, 0.95);
+    transform: perspective(400px) scale3d(0.95, 0.95, 0.95);
+>>>>>>> Stashed changes
     -webkit-animation-timing-function: ease-in;
     animation-timing-function: ease-in;
   }
@@ -2064,6 +2745,11 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .flipOutX {
+<<<<<<< Updated upstream
+=======
+  -webkit-animation-duration: 0.75s;
+  animation-duration: 0.75s;
+>>>>>>> Stashed changes
   -webkit-animation-name: flipOutX;
   animation-name: flipOutX;
   -webkit-backface-visibility: visible !important;
@@ -2109,6 +2795,11 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .flipOutY {
+<<<<<<< Updated upstream
+=======
+  -webkit-animation-duration: 0.75s;
+  animation-duration: 0.75s;
+>>>>>>> Stashed changes
   -webkit-backface-visibility: visible !important;
   backface-visibility: visible !important;
   -webkit-animation-name: flipOutY;
@@ -2135,8 +2826,13 @@ Copyright (c) 2015 Daniel Eden
   }
 
   to {
+<<<<<<< Updated upstream
     -webkit-transform: none;
     transform: none;
+=======
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+>>>>>>> Stashed changes
     opacity: 1;
   }
 }
@@ -2161,8 +2857,13 @@ Copyright (c) 2015 Daniel Eden
   }
 
   to {
+<<<<<<< Updated upstream
     -webkit-transform: none;
     transform: none;
+=======
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+>>>>>>> Stashed changes
     opacity: 1;
   }
 }
@@ -2217,8 +2918,13 @@ Copyright (c) 2015 Daniel Eden
   to {
     -webkit-transform-origin: center;
     transform-origin: center;
+<<<<<<< Updated upstream
     -webkit-transform: none;
     transform: none;
+=======
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+>>>>>>> Stashed changes
     opacity: 1;
   }
 }
@@ -2235,8 +2941,13 @@ Copyright (c) 2015 Daniel Eden
   to {
     -webkit-transform-origin: center;
     transform-origin: center;
+<<<<<<< Updated upstream
     -webkit-transform: none;
     transform: none;
+=======
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+>>>>>>> Stashed changes
     opacity: 1;
   }
 }
@@ -2258,8 +2969,13 @@ Copyright (c) 2015 Daniel Eden
   to {
     -webkit-transform-origin: left bottom;
     transform-origin: left bottom;
+<<<<<<< Updated upstream
     -webkit-transform: none;
     transform: none;
+=======
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+>>>>>>> Stashed changes
     opacity: 1;
   }
 }
@@ -2276,8 +2992,13 @@ Copyright (c) 2015 Daniel Eden
   to {
     -webkit-transform-origin: left bottom;
     transform-origin: left bottom;
+<<<<<<< Updated upstream
     -webkit-transform: none;
     transform: none;
+=======
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+>>>>>>> Stashed changes
     opacity: 1;
   }
 }
@@ -2299,8 +3020,13 @@ Copyright (c) 2015 Daniel Eden
   to {
     -webkit-transform-origin: right bottom;
     transform-origin: right bottom;
+<<<<<<< Updated upstream
     -webkit-transform: none;
     transform: none;
+=======
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+>>>>>>> Stashed changes
     opacity: 1;
   }
 }
@@ -2317,8 +3043,13 @@ Copyright (c) 2015 Daniel Eden
   to {
     -webkit-transform-origin: right bottom;
     transform-origin: right bottom;
+<<<<<<< Updated upstream
     -webkit-transform: none;
     transform: none;
+=======
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+>>>>>>> Stashed changes
     opacity: 1;
   }
 }
@@ -2340,8 +3071,13 @@ Copyright (c) 2015 Daniel Eden
   to {
     -webkit-transform-origin: left bottom;
     transform-origin: left bottom;
+<<<<<<< Updated upstream
     -webkit-transform: none;
     transform: none;
+=======
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+>>>>>>> Stashed changes
     opacity: 1;
   }
 }
@@ -2358,8 +3094,13 @@ Copyright (c) 2015 Daniel Eden
   to {
     -webkit-transform-origin: left bottom;
     transform-origin: left bottom;
+<<<<<<< Updated upstream
     -webkit-transform: none;
     transform: none;
+=======
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+>>>>>>> Stashed changes
     opacity: 1;
   }
 }
@@ -2381,8 +3122,13 @@ Copyright (c) 2015 Daniel Eden
   to {
     -webkit-transform-origin: right bottom;
     transform-origin: right bottom;
+<<<<<<< Updated upstream
     -webkit-transform: none;
     transform: none;
+=======
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+>>>>>>> Stashed changes
     opacity: 1;
   }
 }
@@ -2399,8 +3145,13 @@ Copyright (c) 2015 Daniel Eden
   to {
     -webkit-transform-origin: right bottom;
     transform-origin: right bottom;
+<<<<<<< Updated upstream
     -webkit-transform: none;
     transform: none;
+=======
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+>>>>>>> Stashed changes
     opacity: 1;
   }
 }
@@ -2603,7 +3354,12 @@ Copyright (c) 2015 Daniel Eden
     animation-timing-function: ease-in-out;
   }
 
+<<<<<<< Updated upstream
   20%, 60% {
+=======
+  20%,
+  60% {
+>>>>>>> Stashed changes
     -webkit-transform: rotate3d(0, 0, 1, 80deg);
     transform: rotate3d(0, 0, 1, 80deg);
     -webkit-transform-origin: top left;
@@ -2612,7 +3368,12 @@ Copyright (c) 2015 Daniel Eden
     animation-timing-function: ease-in-out;
   }
 
+<<<<<<< Updated upstream
   40%, 80% {
+=======
+  40%,
+  80% {
+>>>>>>> Stashed changes
     -webkit-transform: rotate3d(0, 0, 1, 60deg);
     transform: rotate3d(0, 0, 1, 60deg);
     -webkit-transform-origin: top left;
@@ -2637,7 +3398,12 @@ Copyright (c) 2015 Daniel Eden
     animation-timing-function: ease-in-out;
   }
 
+<<<<<<< Updated upstream
   20%, 60% {
+=======
+  20%,
+  60% {
+>>>>>>> Stashed changes
     -webkit-transform: rotate3d(0, 0, 1, 80deg);
     transform: rotate3d(0, 0, 1, 80deg);
     -webkit-transform-origin: top left;
@@ -2646,7 +3412,12 @@ Copyright (c) 2015 Daniel Eden
     animation-timing-function: ease-in-out;
   }
 
+<<<<<<< Updated upstream
   40%, 80% {
+=======
+  40%,
+  80% {
+>>>>>>> Stashed changes
     -webkit-transform: rotate3d(0, 0, 1, 60deg);
     transform: rotate3d(0, 0, 1, 60deg);
     -webkit-transform-origin: top left;
@@ -2664,10 +3435,75 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .hinge {
+<<<<<<< Updated upstream
+=======
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+>>>>>>> Stashed changes
   -webkit-animation-name: hinge;
   animation-name: hinge;
 }
 
+<<<<<<< Updated upstream
+=======
+@-webkit-keyframes jackInTheBox {
+  from {
+    opacity: 0;
+    -webkit-transform: scale(0.1) rotate(30deg);
+    transform: scale(0.1) rotate(30deg);
+    -webkit-transform-origin: center bottom;
+    transform-origin: center bottom;
+  }
+
+  50% {
+    -webkit-transform: rotate(-10deg);
+    transform: rotate(-10deg);
+  }
+
+  70% {
+    -webkit-transform: rotate(3deg);
+    transform: rotate(3deg);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+@keyframes jackInTheBox {
+  from {
+    opacity: 0;
+    -webkit-transform: scale(0.1) rotate(30deg);
+    transform: scale(0.1) rotate(30deg);
+    -webkit-transform-origin: center bottom;
+    transform-origin: center bottom;
+  }
+
+  50% {
+    -webkit-transform: rotate(-10deg);
+    transform: rotate(-10deg);
+  }
+
+  70% {
+    -webkit-transform: rotate(3deg);
+    transform: rotate(3deg);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+.jackInTheBox {
+  -webkit-animation-name: jackInTheBox;
+  animation-name: jackInTheBox;
+}
+
+>>>>>>> Stashed changes
 /* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
 
 @-webkit-keyframes rollIn {
@@ -2679,8 +3515,13 @@ Copyright (c) 2015 Daniel Eden
 
   to {
     opacity: 1;
+<<<<<<< Updated upstream
     -webkit-transform: none;
     transform: none;
+=======
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+>>>>>>> Stashed changes
   }
 }
 
@@ -2693,8 +3534,13 @@ Copyright (c) 2015 Daniel Eden
 
   to {
     opacity: 1;
+<<<<<<< Updated upstream
     -webkit-transform: none;
     transform: none;
+=======
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+>>>>>>> Stashed changes
   }
 }
 
@@ -2737,8 +3583,13 @@ Copyright (c) 2015 Daniel Eden
 @-webkit-keyframes zoomIn {
   from {
     opacity: 0;
+<<<<<<< Updated upstream
     -webkit-transform: scale3d(.3, .3, .3);
     transform: scale3d(.3, .3, .3);
+=======
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+>>>>>>> Stashed changes
   }
 
   50% {
@@ -2749,8 +3600,13 @@ Copyright (c) 2015 Daniel Eden
 @keyframes zoomIn {
   from {
     opacity: 0;
+<<<<<<< Updated upstream
     -webkit-transform: scale3d(.3, .3, .3);
     transform: scale3d(.3, .3, .3);
+=======
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+>>>>>>> Stashed changes
   }
 
   50% {
@@ -2766,36 +3622,64 @@ Copyright (c) 2015 Daniel Eden
 @-webkit-keyframes zoomInDown {
   from {
     opacity: 0;
+<<<<<<< Updated upstream
     -webkit-transform: scale3d(.1, .1, .1) translate3d(0, -1000px, 0);
     transform: scale3d(.1, .1, .1) translate3d(0, -1000px, 0);
     -webkit-animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
     animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+=======
+    -webkit-transform: scale3d(0.1, 0.1, 0.1) translate3d(0, -1000px, 0);
+    transform: scale3d(0.1, 0.1, 0.1) translate3d(0, -1000px, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+>>>>>>> Stashed changes
   }
 
   60% {
     opacity: 1;
+<<<<<<< Updated upstream
     -webkit-transform: scale3d(.475, .475, .475) translate3d(0, 60px, 0);
     transform: scale3d(.475, .475, .475) translate3d(0, 60px, 0);
     -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
     animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
+=======
+    -webkit-transform: scale3d(0.475, 0.475, 0.475) translate3d(0, 60px, 0);
+    transform: scale3d(0.475, 0.475, 0.475) translate3d(0, 60px, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+>>>>>>> Stashed changes
   }
 }
 
 @keyframes zoomInDown {
   from {
     opacity: 0;
+<<<<<<< Updated upstream
     -webkit-transform: scale3d(.1, .1, .1) translate3d(0, -1000px, 0);
     transform: scale3d(.1, .1, .1) translate3d(0, -1000px, 0);
     -webkit-animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
     animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+=======
+    -webkit-transform: scale3d(0.1, 0.1, 0.1) translate3d(0, -1000px, 0);
+    transform: scale3d(0.1, 0.1, 0.1) translate3d(0, -1000px, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+>>>>>>> Stashed changes
   }
 
   60% {
     opacity: 1;
+<<<<<<< Updated upstream
     -webkit-transform: scale3d(.475, .475, .475) translate3d(0, 60px, 0);
     transform: scale3d(.475, .475, .475) translate3d(0, 60px, 0);
     -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
     animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
+=======
+    -webkit-transform: scale3d(0.475, 0.475, 0.475) translate3d(0, 60px, 0);
+    transform: scale3d(0.475, 0.475, 0.475) translate3d(0, 60px, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+>>>>>>> Stashed changes
   }
 }
 
@@ -2807,36 +3691,64 @@ Copyright (c) 2015 Daniel Eden
 @-webkit-keyframes zoomInLeft {
   from {
     opacity: 0;
+<<<<<<< Updated upstream
     -webkit-transform: scale3d(.1, .1, .1) translate3d(-1000px, 0, 0);
     transform: scale3d(.1, .1, .1) translate3d(-1000px, 0, 0);
     -webkit-animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
     animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+=======
+    -webkit-transform: scale3d(0.1, 0.1, 0.1) translate3d(-1000px, 0, 0);
+    transform: scale3d(0.1, 0.1, 0.1) translate3d(-1000px, 0, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+>>>>>>> Stashed changes
   }
 
   60% {
     opacity: 1;
+<<<<<<< Updated upstream
     -webkit-transform: scale3d(.475, .475, .475) translate3d(10px, 0, 0);
     transform: scale3d(.475, .475, .475) translate3d(10px, 0, 0);
     -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
     animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
+=======
+    -webkit-transform: scale3d(0.475, 0.475, 0.475) translate3d(10px, 0, 0);
+    transform: scale3d(0.475, 0.475, 0.475) translate3d(10px, 0, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+>>>>>>> Stashed changes
   }
 }
 
 @keyframes zoomInLeft {
   from {
     opacity: 0;
+<<<<<<< Updated upstream
     -webkit-transform: scale3d(.1, .1, .1) translate3d(-1000px, 0, 0);
     transform: scale3d(.1, .1, .1) translate3d(-1000px, 0, 0);
     -webkit-animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
     animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+=======
+    -webkit-transform: scale3d(0.1, 0.1, 0.1) translate3d(-1000px, 0, 0);
+    transform: scale3d(0.1, 0.1, 0.1) translate3d(-1000px, 0, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+>>>>>>> Stashed changes
   }
 
   60% {
     opacity: 1;
+<<<<<<< Updated upstream
     -webkit-transform: scale3d(.475, .475, .475) translate3d(10px, 0, 0);
     transform: scale3d(.475, .475, .475) translate3d(10px, 0, 0);
     -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
     animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
+=======
+    -webkit-transform: scale3d(0.475, 0.475, 0.475) translate3d(10px, 0, 0);
+    transform: scale3d(0.475, 0.475, 0.475) translate3d(10px, 0, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+>>>>>>> Stashed changes
   }
 }
 
@@ -2848,36 +3760,64 @@ Copyright (c) 2015 Daniel Eden
 @-webkit-keyframes zoomInRight {
   from {
     opacity: 0;
+<<<<<<< Updated upstream
     -webkit-transform: scale3d(.1, .1, .1) translate3d(1000px, 0, 0);
     transform: scale3d(.1, .1, .1) translate3d(1000px, 0, 0);
     -webkit-animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
     animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+=======
+    -webkit-transform: scale3d(0.1, 0.1, 0.1) translate3d(1000px, 0, 0);
+    transform: scale3d(0.1, 0.1, 0.1) translate3d(1000px, 0, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+>>>>>>> Stashed changes
   }
 
   60% {
     opacity: 1;
+<<<<<<< Updated upstream
     -webkit-transform: scale3d(.475, .475, .475) translate3d(-10px, 0, 0);
     transform: scale3d(.475, .475, .475) translate3d(-10px, 0, 0);
     -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
     animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
+=======
+    -webkit-transform: scale3d(0.475, 0.475, 0.475) translate3d(-10px, 0, 0);
+    transform: scale3d(0.475, 0.475, 0.475) translate3d(-10px, 0, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+>>>>>>> Stashed changes
   }
 }
 
 @keyframes zoomInRight {
   from {
     opacity: 0;
+<<<<<<< Updated upstream
     -webkit-transform: scale3d(.1, .1, .1) translate3d(1000px, 0, 0);
     transform: scale3d(.1, .1, .1) translate3d(1000px, 0, 0);
     -webkit-animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
     animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+=======
+    -webkit-transform: scale3d(0.1, 0.1, 0.1) translate3d(1000px, 0, 0);
+    transform: scale3d(0.1, 0.1, 0.1) translate3d(1000px, 0, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+>>>>>>> Stashed changes
   }
 
   60% {
     opacity: 1;
+<<<<<<< Updated upstream
     -webkit-transform: scale3d(.475, .475, .475) translate3d(-10px, 0, 0);
     transform: scale3d(.475, .475, .475) translate3d(-10px, 0, 0);
     -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
     animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
+=======
+    -webkit-transform: scale3d(0.475, 0.475, 0.475) translate3d(-10px, 0, 0);
+    transform: scale3d(0.475, 0.475, 0.475) translate3d(-10px, 0, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+>>>>>>> Stashed changes
   }
 }
 
@@ -2889,36 +3829,64 @@ Copyright (c) 2015 Daniel Eden
 @-webkit-keyframes zoomInUp {
   from {
     opacity: 0;
+<<<<<<< Updated upstream
     -webkit-transform: scale3d(.1, .1, .1) translate3d(0, 1000px, 0);
     transform: scale3d(.1, .1, .1) translate3d(0, 1000px, 0);
     -webkit-animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
     animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+=======
+    -webkit-transform: scale3d(0.1, 0.1, 0.1) translate3d(0, 1000px, 0);
+    transform: scale3d(0.1, 0.1, 0.1) translate3d(0, 1000px, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+>>>>>>> Stashed changes
   }
 
   60% {
     opacity: 1;
+<<<<<<< Updated upstream
     -webkit-transform: scale3d(.475, .475, .475) translate3d(0, -60px, 0);
     transform: scale3d(.475, .475, .475) translate3d(0, -60px, 0);
     -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
     animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
+=======
+    -webkit-transform: scale3d(0.475, 0.475, 0.475) translate3d(0, -60px, 0);
+    transform: scale3d(0.475, 0.475, 0.475) translate3d(0, -60px, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+>>>>>>> Stashed changes
   }
 }
 
 @keyframes zoomInUp {
   from {
     opacity: 0;
+<<<<<<< Updated upstream
     -webkit-transform: scale3d(.1, .1, .1) translate3d(0, 1000px, 0);
     transform: scale3d(.1, .1, .1) translate3d(0, 1000px, 0);
     -webkit-animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
     animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+=======
+    -webkit-transform: scale3d(0.1, 0.1, 0.1) translate3d(0, 1000px, 0);
+    transform: scale3d(0.1, 0.1, 0.1) translate3d(0, 1000px, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+>>>>>>> Stashed changes
   }
 
   60% {
     opacity: 1;
+<<<<<<< Updated upstream
     -webkit-transform: scale3d(.475, .475, .475) translate3d(0, -60px, 0);
     transform: scale3d(.475, .475, .475) translate3d(0, -60px, 0);
     -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
     animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
+=======
+    -webkit-transform: scale3d(0.475, 0.475, 0.475) translate3d(0, -60px, 0);
+    transform: scale3d(0.475, 0.475, 0.475) translate3d(0, -60px, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+>>>>>>> Stashed changes
   }
 }
 
@@ -2934,8 +3902,13 @@ Copyright (c) 2015 Daniel Eden
 
   50% {
     opacity: 0;
+<<<<<<< Updated upstream
     -webkit-transform: scale3d(.3, .3, .3);
     transform: scale3d(.3, .3, .3);
+=======
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+>>>>>>> Stashed changes
   }
 
   to {
@@ -2950,8 +3923,13 @@ Copyright (c) 2015 Daniel Eden
 
   50% {
     opacity: 0;
+<<<<<<< Updated upstream
     -webkit-transform: scale3d(.3, .3, .3);
     transform: scale3d(.3, .3, .3);
+=======
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+>>>>>>> Stashed changes
   }
 
   to {
@@ -2967,40 +3945,72 @@ Copyright (c) 2015 Daniel Eden
 @-webkit-keyframes zoomOutDown {
   40% {
     opacity: 1;
+<<<<<<< Updated upstream
     -webkit-transform: scale3d(.475, .475, .475) translate3d(0, -60px, 0);
     transform: scale3d(.475, .475, .475) translate3d(0, -60px, 0);
     -webkit-animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
     animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+=======
+    -webkit-transform: scale3d(0.475, 0.475, 0.475) translate3d(0, -60px, 0);
+    transform: scale3d(0.475, 0.475, 0.475) translate3d(0, -60px, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+>>>>>>> Stashed changes
   }
 
   to {
     opacity: 0;
+<<<<<<< Updated upstream
     -webkit-transform: scale3d(.1, .1, .1) translate3d(0, 2000px, 0);
     transform: scale3d(.1, .1, .1) translate3d(0, 2000px, 0);
     -webkit-transform-origin: center bottom;
     transform-origin: center bottom;
     -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
     animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
+=======
+    -webkit-transform: scale3d(0.1, 0.1, 0.1) translate3d(0, 2000px, 0);
+    transform: scale3d(0.1, 0.1, 0.1) translate3d(0, 2000px, 0);
+    -webkit-transform-origin: center bottom;
+    transform-origin: center bottom;
+    -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+>>>>>>> Stashed changes
   }
 }
 
 @keyframes zoomOutDown {
   40% {
     opacity: 1;
+<<<<<<< Updated upstream
     -webkit-transform: scale3d(.475, .475, .475) translate3d(0, -60px, 0);
     transform: scale3d(.475, .475, .475) translate3d(0, -60px, 0);
     -webkit-animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
     animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+=======
+    -webkit-transform: scale3d(0.475, 0.475, 0.475) translate3d(0, -60px, 0);
+    transform: scale3d(0.475, 0.475, 0.475) translate3d(0, -60px, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+>>>>>>> Stashed changes
   }
 
   to {
     opacity: 0;
+<<<<<<< Updated upstream
     -webkit-transform: scale3d(.1, .1, .1) translate3d(0, 2000px, 0);
     transform: scale3d(.1, .1, .1) translate3d(0, 2000px, 0);
     -webkit-transform-origin: center bottom;
     transform-origin: center bottom;
     -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
     animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
+=======
+    -webkit-transform: scale3d(0.1, 0.1, 0.1) translate3d(0, 2000px, 0);
+    transform: scale3d(0.1, 0.1, 0.1) translate3d(0, 2000px, 0);
+    -webkit-transform-origin: center bottom;
+    transform-origin: center bottom;
+    -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+>>>>>>> Stashed changes
   }
 }
 
@@ -3012,14 +4022,24 @@ Copyright (c) 2015 Daniel Eden
 @-webkit-keyframes zoomOutLeft {
   40% {
     opacity: 1;
+<<<<<<< Updated upstream
     -webkit-transform: scale3d(.475, .475, .475) translate3d(42px, 0, 0);
     transform: scale3d(.475, .475, .475) translate3d(42px, 0, 0);
+=======
+    -webkit-transform: scale3d(0.475, 0.475, 0.475) translate3d(42px, 0, 0);
+    transform: scale3d(0.475, 0.475, 0.475) translate3d(42px, 0, 0);
+>>>>>>> Stashed changes
   }
 
   to {
     opacity: 0;
+<<<<<<< Updated upstream
     -webkit-transform: scale(.1) translate3d(-2000px, 0, 0);
     transform: scale(.1) translate3d(-2000px, 0, 0);
+=======
+    -webkit-transform: scale(0.1) translate3d(-2000px, 0, 0);
+    transform: scale(0.1) translate3d(-2000px, 0, 0);
+>>>>>>> Stashed changes
     -webkit-transform-origin: left center;
     transform-origin: left center;
   }
@@ -3028,14 +4048,24 @@ Copyright (c) 2015 Daniel Eden
 @keyframes zoomOutLeft {
   40% {
     opacity: 1;
+<<<<<<< Updated upstream
     -webkit-transform: scale3d(.475, .475, .475) translate3d(42px, 0, 0);
     transform: scale3d(.475, .475, .475) translate3d(42px, 0, 0);
+=======
+    -webkit-transform: scale3d(0.475, 0.475, 0.475) translate3d(42px, 0, 0);
+    transform: scale3d(0.475, 0.475, 0.475) translate3d(42px, 0, 0);
+>>>>>>> Stashed changes
   }
 
   to {
     opacity: 0;
+<<<<<<< Updated upstream
     -webkit-transform: scale(.1) translate3d(-2000px, 0, 0);
     transform: scale(.1) translate3d(-2000px, 0, 0);
+=======
+    -webkit-transform: scale(0.1) translate3d(-2000px, 0, 0);
+    transform: scale(0.1) translate3d(-2000px, 0, 0);
+>>>>>>> Stashed changes
     -webkit-transform-origin: left center;
     transform-origin: left center;
   }
@@ -3049,14 +4079,24 @@ Copyright (c) 2015 Daniel Eden
 @-webkit-keyframes zoomOutRight {
   40% {
     opacity: 1;
+<<<<<<< Updated upstream
     -webkit-transform: scale3d(.475, .475, .475) translate3d(-42px, 0, 0);
     transform: scale3d(.475, .475, .475) translate3d(-42px, 0, 0);
+=======
+    -webkit-transform: scale3d(0.475, 0.475, 0.475) translate3d(-42px, 0, 0);
+    transform: scale3d(0.475, 0.475, 0.475) translate3d(-42px, 0, 0);
+>>>>>>> Stashed changes
   }
 
   to {
     opacity: 0;
+<<<<<<< Updated upstream
     -webkit-transform: scale(.1) translate3d(2000px, 0, 0);
     transform: scale(.1) translate3d(2000px, 0, 0);
+=======
+    -webkit-transform: scale(0.1) translate3d(2000px, 0, 0);
+    transform: scale(0.1) translate3d(2000px, 0, 0);
+>>>>>>> Stashed changes
     -webkit-transform-origin: right center;
     transform-origin: right center;
   }
@@ -3065,14 +4105,24 @@ Copyright (c) 2015 Daniel Eden
 @keyframes zoomOutRight {
   40% {
     opacity: 1;
+<<<<<<< Updated upstream
     -webkit-transform: scale3d(.475, .475, .475) translate3d(-42px, 0, 0);
     transform: scale3d(.475, .475, .475) translate3d(-42px, 0, 0);
+=======
+    -webkit-transform: scale3d(0.475, 0.475, 0.475) translate3d(-42px, 0, 0);
+    transform: scale3d(0.475, 0.475, 0.475) translate3d(-42px, 0, 0);
+>>>>>>> Stashed changes
   }
 
   to {
     opacity: 0;
+<<<<<<< Updated upstream
     -webkit-transform: scale(.1) translate3d(2000px, 0, 0);
     transform: scale(.1) translate3d(2000px, 0, 0);
+=======
+    -webkit-transform: scale(0.1) translate3d(2000px, 0, 0);
+    transform: scale(0.1) translate3d(2000px, 0, 0);
+>>>>>>> Stashed changes
     -webkit-transform-origin: right center;
     transform-origin: right center;
   }
@@ -3086,40 +4136,72 @@ Copyright (c) 2015 Daniel Eden
 @-webkit-keyframes zoomOutUp {
   40% {
     opacity: 1;
+<<<<<<< Updated upstream
     -webkit-transform: scale3d(.475, .475, .475) translate3d(0, 60px, 0);
     transform: scale3d(.475, .475, .475) translate3d(0, 60px, 0);
     -webkit-animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
     animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+=======
+    -webkit-transform: scale3d(0.475, 0.475, 0.475) translate3d(0, 60px, 0);
+    transform: scale3d(0.475, 0.475, 0.475) translate3d(0, 60px, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+>>>>>>> Stashed changes
   }
 
   to {
     opacity: 0;
+<<<<<<< Updated upstream
     -webkit-transform: scale3d(.1, .1, .1) translate3d(0, -2000px, 0);
     transform: scale3d(.1, .1, .1) translate3d(0, -2000px, 0);
     -webkit-transform-origin: center bottom;
     transform-origin: center bottom;
     -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
     animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
+=======
+    -webkit-transform: scale3d(0.1, 0.1, 0.1) translate3d(0, -2000px, 0);
+    transform: scale3d(0.1, 0.1, 0.1) translate3d(0, -2000px, 0);
+    -webkit-transform-origin: center bottom;
+    transform-origin: center bottom;
+    -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+>>>>>>> Stashed changes
   }
 }
 
 @keyframes zoomOutUp {
   40% {
     opacity: 1;
+<<<<<<< Updated upstream
     -webkit-transform: scale3d(.475, .475, .475) translate3d(0, 60px, 0);
     transform: scale3d(.475, .475, .475) translate3d(0, 60px, 0);
     -webkit-animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
     animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+=======
+    -webkit-transform: scale3d(0.475, 0.475, 0.475) translate3d(0, 60px, 0);
+    transform: scale3d(0.475, 0.475, 0.475) translate3d(0, 60px, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+>>>>>>> Stashed changes
   }
 
   to {
     opacity: 0;
+<<<<<<< Updated upstream
     -webkit-transform: scale3d(.1, .1, .1) translate3d(0, -2000px, 0);
     transform: scale3d(.1, .1, .1) translate3d(0, -2000px, 0);
     -webkit-transform-origin: center bottom;
     transform-origin: center bottom;
     -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
     animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
+=======
+    -webkit-transform: scale3d(0.1, 0.1, 0.1) translate3d(0, -2000px, 0);
+    transform: scale3d(0.1, 0.1, 0.1) translate3d(0, -2000px, 0);
+    -webkit-transform-origin: center bottom;
+    transform-origin: center bottom;
+    -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+>>>>>>> Stashed changes
   }
 }
 
@@ -3374,4 +4456,8 @@ Copyright (c) 2015 Daniel Eden
 .slideOutUp {
   -webkit-animation-name: slideOutUp;
   animation-name: slideOutUp;
+<<<<<<< Updated upstream
 }
+=======
+}
+>>>>>>> Stashed changes

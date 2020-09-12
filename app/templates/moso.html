@@ -1,0 +1,44 @@
+{% extends 'index.html' %}
+{% block body %}
+<section class="hero-section set-bg" data-setbg="{{ url_for('static', filename='img/bg.jpg') }}">
+		<div class="container h-100">
+			<div class="hero-content text-white"/>
+                    <form method="post">
+
+						<h2>Mở sổ</h2>
+
+                        <label> Tên khách hàng:
+                            <input type="text" name="name" id="name" placeholder="Nhập tên khách hàng.." required="required" />
+                        </label>
+
+                        <label> Số CMND:
+                            <input type="text" name="CMND" id="CMND" placeholder="Nhập số CMND.." required="required" />
+                        </label>
+
+                        <label> Địa chỉ:
+                            <input type="text" name="address" id="address" placeholder="Nhập địa chỉ.." required="required" />
+                        </label>
+
+                        <label> Số tiền muốn gửi:
+                            <input type="text" name="amount" id="amount" placeholder="Nhập số tiền muốn gửi.." required="required" />
+                        </label>
+
+                        <label>Loại tiết kiệm
+                            <select class="form-control" name="loaitietkiem" required="required" >
+                            {% for loai in loaitietkiem %}
+                                <option value="{{ loai.maLoaiTK }}">{{ loai.tenLoaiTK }}</option>
+                            {% endfor %}
+                            </select>
+                        </label>
+
+						<button type="submit" class="site-btn">Mở sổ</button>
+
+                    </form>
+				</div>
+				<div class="hero-rocket">
+					<img src="{{ url_for('static', filename='img/rocket.png') }}" alt="">
+				</div>
+			</div>
+		</div>
+	</section>
+{% endblock %}
