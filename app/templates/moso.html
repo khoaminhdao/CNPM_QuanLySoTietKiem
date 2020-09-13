@@ -12,7 +12,7 @@
                         </label>
 
                         <label> Số CMND:
-                            <input type="text" name="CMND" id="CMND" placeholder="Nhập số CMND.." required="required" />
+                            <input type="text" name="CMND" id="CMND" placeholder="Nhập số CMND.." pattern="{9, 12}" required="required" />
                         </label>
 
                         <label> Địa chỉ:
@@ -20,9 +20,8 @@
                         </label>
 
                         <label> Số tiền muốn gửi:
-                            <input type="text" name="amount" id="amount" placeholder="Nhập số tiền muốn gửi.." required="required" />
+                            <input type="number" name="amount" id="amount" placeholder="Nhập số tiền muốn gửi.." required="required" />
                         </label>
-
                         <label>Loại tiết kiệm
                             <select class="form-control" name="loaitietkiem" required="required" >
                             {% for loai in loaitietkiem %}

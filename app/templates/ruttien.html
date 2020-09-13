@@ -1,0 +1,44 @@
+{% extends 'index.html' %}
+{% block body %}
+<section class="hero-section set-bg" data-setbg="{{ url_for('static', filename='img/bg.jpg') }}">
+		<div class="container h-100">
+			<div class="hero-content text-white"/>
+                    <form method="post">
+
+						<h2>Lập phiếu rút tiền</h2>
+
+                         <label>Mã sổ
+                            <select class="form-control" name="maSo" onchange="chonSo(this)" required="required" >
+                            {% for so in dsso %}
+                                <option value="{{ so.maSo }}" label="{{ so.khachHang }}">{{ so.maSo }}</option>
+                            {% endfor %}
+                            </select>
+                        </label>
+
+                        <label> Tên khách hàng:
+                            <input type="text" name="name" id="name" required="required" />
+                        </label>
+
+                        <label> Số tiền rút:
+                            <input type="number" name="amount" id="amount" placeholder="Nhập số tiền muốn gửi.." min="100000" step="50000" required="required" />
+                        </label>
+
+						<button type="submit" class="site-btn">Lập phiếu</button>
+
+                    </form>
+				</div>
+				<div class="hero-rocket">
+					<img src="{{ url_for('static', filename='img/rocket.png') }}" alt="">
+				</div>
+			</div>
+		</div>
+	</section>
+     <script language="javascript">
+         function chonSo(obj)
+         {
+            var name = document.getElementById('name');
+            var v = obj.find(":selected").label;
+            name.value = v;
+         }
+     </script>
+{% endblock %}

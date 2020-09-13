@@ -47,5 +47,21 @@ def moso():
 
     return render_template("moso.html", loaitietkiem=dao.read_Loai())
 
+@app.route("/guitien", methods=['GET', 'POST'])
+def guitien():
+    if request.method == 'POST':
+       if dao.them_PhieuGuiTien(**dict(request.form)):
+         return redirect("/guitien")
+
+    return render_template("guitien.html", dsso=dao.read_STK_KKH())
+
+@app.route("/ruttien", methods=['GET', 'POST'])
+def ruttien():
+    if request.method == 'POST':
+       if dao.them_PhieuRutTien(**dict(request.form)):
+         return redirect("/ruttien")
+
+    return render_template("ruttien.html", dsso=dao.read_STK_DuocRut())
+
 if __name__ == "__main__":
     app.run()
