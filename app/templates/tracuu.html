@@ -5,25 +5,32 @@
 			<div class="hero-content text-white"/>
                     <form method="post">
 
-						<h2>Lập phiếu gửi</h2>
+						<h2>Tra cứu</h2>
 
-                         <label>Mã sổ
-                            <select class="form-control" name="maSo" onchange="chonSo(this)" required="required" >
-                            {% for so in dsso %}
-                                <option value="{{ so.maSo }}" label="{{ so.khachHang }}">{{ so.maSo }}</option>
-                            {% endfor %}
-                            </select>
-                        </label>
+        <div class="table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Mã sổ</th>
+                  <th>Loại tiết kiệm</th>
+                  <th>Khách hàng</th>
+                  <th>Số dư</th>
+                </tr>
+              </thead>
+              <tbody>
+              {% for so in dsso %}
+                <tr>
+                    <td>{{ so.maSo }}</td>
+                    <td>{{ so.tenLoaiTK }}</td>
+                    <td>{{ so.khachHang }}</td>
+                    <td>{{ so.soTienGui }}</td>
+                </tr>
+              {% endfor %}
+              </tbody>
+            </table>
+          </div>
 
-                        <label> Tên khách hàng:
-                            <input type="text" name="name" id="name" required="required" />
-                        </label>
-
-                        <label> Số tiền muốn gửi:
-                            <input type="number" name="amount" id="amount" placeholder="Nhập số tiền muốn gửi.." min="100000" step="50000" required="required" />
-                        </label>
-
-						<button type="submit" class="site-btn">Lập phiếu</button>
+						<button type="submit" class="site-btn">Tra cứu</button>
 
                     </form>
 				</div>

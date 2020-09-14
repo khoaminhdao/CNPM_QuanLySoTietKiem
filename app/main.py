@@ -23,6 +23,7 @@ def login():
             pass
     return render_template("index.html")
 
+
 @app.route("/login-admin", methods=['GET', 'POST'])
 def login_admin():
     if request.method == 'POST':
@@ -34,12 +35,15 @@ def login_admin():
             login_user(user=user)
     return redirect("/admin")
 
+
 @app.route("/logout")
 def logout():
     logout_user()
     return redirect("/")
 
+
 @app.route("/moso", methods=['GET', 'POST'])
+@login_required
 def moso():
     if request.method == 'POST':
        if dao.them_STK(**dict(request.form)):
@@ -47,7 +51,9 @@ def moso():
 
     return render_template("moso.html", loaitietkiem=dao.read_Loai())
 
+
 @app.route("/guitien", methods=['GET', 'POST'])
+@login_required
 def guitien():
     if request.method == 'POST':
        if dao.them_PhieuGuiTien(**dict(request.form)):
@@ -55,13 +61,30 @@ def guitien():
 
     return render_template("guitien.html", dsso=dao.read_STK_KKH())
 
+
 @app.route("/ruttien", methods=['GET', 'POST'])
+@login_required
 def ruttien():
     if request.method == 'POST':
        if dao.them_PhieuRutTien(**dict(request.form)):
          return redirect("/ruttien")
 
     return render_template("ruttien.html", dsso=dao.read_STK_DuocRut())
+
+
+@app.route("/tracuu", methods=['GET', 'POST'])
+@login_required
+def tracuu():
+    if request.method == 'POST':
+       if dao.them_PhieuRutTien(**dict(request.form)):
+         return redirect("/tracuu")
+
+    return render_template("tracuu.html", dsso=dao.read_STK())
+
+@app.route("/thongke", methods=['GET'])
+@login_required
+def thongke():
+    return render_template("thongke.html")
 
 if __name__ == "__main__":
     app.run()

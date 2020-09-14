@@ -22,6 +22,9 @@ class LoaiTietKiem(db.Model):
     ngayApDung = Column(DateTime, nullable=False)
     loaiTietKiem = relationship('SoTietKiem', backref='loaitietkiem', lazy=False)
 
+    def __str__(self):
+        return self.tenLoaiTK
+
 
 class SoTietKiem(db.Model):
     maSo = Column(Integer, primary_key=True, autoincrement=True)
@@ -35,6 +38,8 @@ class SoTietKiem(db.Model):
     soRut = relationship('PhieuRutTien', backref='sotietkiem', lazy=True)
     soGui = relationship('PhieuGuiTien', backref='sotietkiem', lazy=True)
 
+    def __str__(self):
+        return str(self.maSo)
 
 class ChucVu(db.Model):
     maCv = Column(Integer, primary_key=True, autoincrement=True)
@@ -54,6 +59,8 @@ class NhanVien(db.Model, UserMixin):
     nhanVienGui = relationship('PhieuGuiTien', backref='nhanvien', lazy=True)
     nhanVienTaoQuyDinh = relationship('QuyDinh', backref='nhanvien', lazy=True)
 
+    def __str__(self):
+        return self.tenNV
 
     def get_id(self):
         return self.maNV
@@ -82,8 +89,6 @@ class PhieuGuiTien(db.Model):
     soTienGui = Column(Float, nullable=False)
     nhanVien = Column(Integer, ForeignKey(NhanVien.maNV), nullable=False)
 
-    def __str__(self):
-        return self.name
 
 
 class LoaiTietKiemView(AuthenticatedView):
