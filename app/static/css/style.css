@@ -618,6 +618,10 @@ ol {
 	margin-bottom: 40px;
 }
 
+.hero-content label {
+	color: #fff;
+}
+
 .hero-rocket {
 	position: absolute;
 	bottom: 8px;
@@ -1734,7 +1738,7 @@ ol {
     box-sizing: border-box;
   }
   html {
-    font-size: 62.5%;
+    font-size: 75%;
   }
 
   body {

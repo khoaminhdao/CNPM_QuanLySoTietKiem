@@ -1,43 +1,44 @@
 {% extends 'index.html' %}
 {% block body %}
 <section class="hero-section set-bg" data-setbg="{{ url_for('static', filename='img/bg.jpg') }}">
-		<div class="container h-100">
 			<div class="hero-content text-white"/>
+
                     <form method="post">
+                        <h2 style="font-size:40px">Create saving</h2>
 
-						<h2>Mở sổ</h2>
-
-                        <label> Tên khách hàng:
-                            <input type="text" name="name" id="name" placeholder="Nhập tên khách hàng.." required="required" />
+                        <label style="color:#FFFFFF"> Customer name:
+                            <input type="text" name="name" id="name" placeholder="Input customer name.." required="required" />
                         </label>
 
-                        <label> Số CMND:
-                            <input type="text" name="CMND" id="CMND" placeholder="Nhập số CMND.." pattern="{9, 12}" required="required" />
+                        <label style="color:#FFFFFF"> Identity card number:
+                            <input type="text" name="CMND" id="CMND" placeholder="Input customer identitycard number.." pattern="{9, 12}" required="required" />
                         </label>
 
-                        <label> Địa chỉ:
-                            <input type="text" name="address" id="address" placeholder="Nhập địa chỉ.." required="required" />
+                        <label style="color:#FFFFFF"> Address:
+                            <input type="text" name="address" id="address" placeholder="Input customer address.." required="required" />
                         </label>
 
-                        <label> Số tiền muốn gửi:
-                            <input type="number" name="amount" id="amount" placeholder="Nhập số tiền muốn gửi.." required="required" />
+                        <label style="color:#FFFFFF"> Deposit amount:
+                            <input type="number" name="amount" id="amount" placeholder="Input amount of money.." required="required" />
                         </label>
-                        <label>Loại tiết kiệm
-                            <select class="form-control" name="loaitietkiem" required="required" >
+
+                        <label style="color:#FFFFFF"> Saving type:
+                            <select class="form-control" name="loaitietkiem" style="font-size:10px; height:25px; width: 100px" required="required" >
                             {% for loai in loaitietkiem %}
                                 <option value="{{ loai.maLoaiTK }}">{{ loai.tenLoaiTK }}</option>
                             {% endfor %}
                             </select>
                         </label>
 
-						<button type="submit" class="site-btn">Mở sổ</button>
+						<button type="submit" class="contact-form-submit" style="color: white; padding: 1.5rem; width: 100%;
+                            max-width: 25rem; border-radius: 5rem; border: 0; outline: none; cursor: pointer; text-align: center;
+                            font-weight: 500; white-space: nowrap; letter-spacing: 1px; background-color: #7b78f8;
+                            box-shadow: 0 10px 20px 0 rgba(123, 120, 248, 0.5);">Create</button>
 
                     </form>
-				</div>
 				<div class="hero-rocket">
 					<img src="{{ url_for('static', filename='img/rocket.png') }}" alt="">
 				</div>
 			</div>
-		</div>
 	</section>
 {% endblock %}
