@@ -5,42 +5,55 @@ from flask_login import current_user
 from sqlalchemy import or_
 
 from app import db
-from app.models import LoaiTietKiem, SoTietKiem, PhieuGuiTien, PhieuRutTien
+from app.models import SavingType, Saving, DepositForm, Employee
 
 
-def read_Loai():
-    return LoaiTietKiem.query.all()
+def read_Type():
+    return SavingType.query.all()
 
-def read_STK():
-    return SoTietKiem.query.all()
 
-def read_STK_KKH():
-    return SoTietKiem.query.filter(SoTietKiem.loaiTietKiem == 1).all()
+def read_Saving():
+    return Saving.query.all()
 
-def read_STK_DuocRut():
-    return SoTietKiem.query.filter(SoTietKiem.loaiTietKiem == 1)
 
-def them_STK(name, CMND, address, amount, loaitietkiem):
-    stk = SoTietKiem(loaiTietKiem=loaitietkiem, khachHang=name, CMND=CMND, diaChi=address, ngayMoSo=datetime.now(), soTienGui=amount)
-    db.session.add(stk)
+def read_NoTerm_Saving():
+    return Saving.query.filter(Saving.savingTypeID == 1).all()
+
+
+def read_WithdrawAllowed_Saving():
+    return Saving.query.filter(Saving.savingTypeID == 1)
+
+#def add_Saving(customerName, identityNumber, address, amount, savingType):
+#    saving = Saving(savingTypeID=savingType, customerID=name, CMND=CMND, diaChi=address, ngayMoSo=datetime.now(), soTienGui=amount)
+#    db.session.add(stk)
+#    db.session.commit()
+
+
+def add_DepositForm(savingID, amount):
+    depositForm = DepositForm(savingID=savingID, depositDate=datetime.now(), amount=amount, employeeCreated=current_user.identityNumber)
+    db.session.add(depositForm)
     db.session.commit()
 
-def them_PhieuGuiTien(maSo, name, amount):
-    pgt = PhieuGuiTien(maSo=maSo, ngayGui=datetime.now(), soTienGui=amount, nhanVien=current_user.maNV)
-    db.session.add(pgt)
+    saving = Saving.query.get(savingID)
+    saving.balanceAmount += float(amount)
+    db.session.add(saving)
     db.session.commit()
 
-    stk = SoTietKiem.query.get(maSo)
-    stk.soTienGui += float(amount)
-    db.session.add(stk)
+
+def add_WithdrawalForm(savingID, amount):
+    withdrawalForm = DepositForm(savingID=savingID, depositDate=datetime.now(), amount=amount, employeeCreated=current_user.identityNumber)
+    db.session.add(withdrawalForm)
     db.session.commit()
 
-def them_PhieuRutTien(maSo, name, amount):
-    pgt = PhieuRutTien(maSo=maSo, ngayRut=datetime.now(), soTienRut=amount, nhanVien=current_user.maNV)
-    db.session.add(pgt)
+    saving = Saving.query.get(savingID)
+    saving.balanceAmount -= float(amount)
+    db.session.add(saving)
     db.session.commit()
 
-    stk = SoTietKiem.query.get(maSo)
-    stk.soTienGui -= float(amount)
-    db.session.add(stk)
+
+def save_Activity():
+    employee = Employee.query.get(current_user.identityNumber)
+    employee.lastActive = datetime.now()
+    db.session.add(employee)
     db.session.commit()
+

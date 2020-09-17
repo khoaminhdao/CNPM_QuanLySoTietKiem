@@ -5,23 +5,23 @@
 			<div class="hero-content text-white"/>
                     <form method="post">
 
-						<h2>Tra cứu</h2>
+						<h2>Search</h2>
 
         <div class="table">
             <table>
               <thead>
                 <tr>
-                  <th>Mã sổ</th>
-                  <th>Loại tiết kiệm</th>
-                  <th>Khách hàng</th>
-                  <th>Số dư</th>
+                  <th>Saving ID</th>
+                  <th>Saving type</th>
+                  <th>Customer's name</th>
+                  <th>Banlance amount</th>
                 </tr>
               </thead>
               <tbody>
               {% for so in dsso %}
                 <tr>
                     <td>{{ so.maSo }}</td>
-                    <td>{{ so.tenLoaiTK }}</td>
+                    <td>{{ so.loaitietkiem.tenLoaiTK }}</td>
                     <td>{{ so.khachHang }}</td>
                     <td>{{ so.soTienGui }}</td>
                 </tr>
@@ -40,12 +40,4 @@
 			</div>
 		</div>
 	</section>
-     <script language="javascript">
-         function chonSo(obj)
-         {
-            var name = document.getElementById('name');
-            var v = obj.find(":selected").label;
-            name.value = v;
-         }
-     </script>
 {% endblock %}

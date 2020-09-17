@@ -7,8 +7,9 @@ from app import app, login, dao
 from app.models import *
 
 @login.user_loader
-def user_load(maNV):
-    return NhanVien.query.get(maNV)
+def user_load(identityNumber):
+    return Employee.query.get(identityNumber)
+
 
 @app.route("/", methods=['GET', 'POST'])
 def login():
@@ -16,9 +17,10 @@ def login():
         username = request.form.get("username")
         password = request.form.get("password")
         password = str(hashlib.md5(password.strip().encode("utf-8")).hexdigest())
-        user = NhanVien.query.filter(NhanVien.taiKhoan == username.strip(), NhanVien.matKhau == password.strip()).first()
+        user = Employee.query.filter(Employee.account == username.strip(), Employee.password == password.strip()).first()
         if user:
             login_user(user=user)
+            dao.save_Activity()
         else:
             pass
     return render_template("index.html")
@@ -30,14 +32,17 @@ def login_admin():
         username = request.form.get("username")
         password = request.form.get("password")
         password = str(hashlib.md5(password.strip().encode("utf-8")).hexdigest())
-        user = NhanVien.query.filter(NhanVien.taiKhoan == username.strip(), NhanVien.matKhau == password.strip(), NhanVien.chucVu == 1).first()
+        user = Employee.query.filter(Employee.account == username.strip(), Employee.password == password.strip(),
+                                     Employee.positionID == 1).first()
         if user:
             login_user(user=user)
+            dao.save_Activity()
     return redirect("/admin")
 
 
 @app.route("/logout")
 def logout():
+    dao.save_Activity()
     logout_user()
     return redirect("/")
 

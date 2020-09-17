@@ -4,6 +4,7 @@ from flask_login import UserMixin, logout_user, current_user
 from sqlalchemy import Column, Integer, String, Float, ForeignKey, DateTime, Boolean
 from sqlalchemy.orm import relationship
 from werkzeug.utils import redirect
+from datetime import datetime
 
 from app import db, admin
 
@@ -14,109 +15,143 @@ class AuthenticatedView(ModelView):
         return current_user.is_authenticated
 
 
-class LoaiTietKiem(db.Model):
-    maLoaiTK = Column(Integer, primary_key=True, autoincrement=True)
-    tenLoaiTK = Column(String(50), nullable=False)
-    kyHan = Column(Integer, nullable=False)
-    laiSuat = Column(Float, nullable=False)
-    ngayApDung = Column(DateTime, nullable=False)
-    loaiTietKiem = relationship('SoTietKiem', backref='loaitietkiem', lazy=False)
+class SavingType(db.Model):
+    savingTypeID = Column(Integer, primary_key=True, autoincrement=True)
+    savingName = Column(String(50), nullable=False)
+    term = Column(Integer, nullable=False)
+    interestRate = Column(Float, nullable=False)
+    applyDate = Column(DateTime, nullable=False)
+    saving = relationship('Saving', backref='savingtype', lazy=False)
 
     def __str__(self):
-        return self.tenLoaiTK
+        return self.savingName
 
 
-class SoTietKiem(db.Model):
-    maSo = Column(Integer, primary_key=True, autoincrement=True)
-    loaiTietKiem = Column(Integer, ForeignKey(LoaiTietKiem.maLoaiTK), nullable=False)
-    khachHang = Column(String(50), nullable=False)
-    CMND = Column(String(12), nullable=False)
-    diaChi = Column(String(100), nullable=False)
-    ngayMoSo = Column(DateTime, nullable=False)
-    soTienGui = Column(Float, nullable=False)
-    soLanDaoHan = Column(Integer, nullable=False, default=1)
-    soRut = relationship('PhieuRutTien', backref='sotietkiem', lazy=True)
-    soGui = relationship('PhieuGuiTien', backref='sotietkiem', lazy=True)
+class Customer(db.Model):
+    identityNumber = Column(String(12), primary_key=True)
+    customerName = Column(String(50), nullable=False)
+    address = Column(String(100), nullable=False)
+    saving = relationship('Saving', backref='customer', lazy=False)
 
     def __str__(self):
-        return str(self.maSo)
-
-class ChucVu(db.Model):
-    maCv = Column(Integer, primary_key=True, autoincrement=True)
-    tenCV = Column(String(50), nullable=False)
-    chucVu = relationship('NhanVien', backref='chucvu', lazy=True)
+        return self.identityNumber + "\t" + self.customerName
 
 
-class NhanVien(db.Model, UserMixin):
-    maNV = Column(Integer, primary_key=True, autoincrement=True)
-    CMND = Column(String(12), nullable=True)
-    tenNV = Column(String(50), nullable=False)
-    taiKhoan = Column(String(20), nullable=False)
-    matKhau = Column(String(255), nullable=False)
-    chucVu = Column(Integer, ForeignKey(ChucVu.maCv), nullable=False)
-    lanTruyCapGanNhat = Column(DateTime, nullable=True)
-    nhanVienRut = relationship('PhieuRutTien', backref='nhanvien', lazy=True)
-    nhanVienGui = relationship('PhieuGuiTien', backref='nhanvien', lazy=True)
-    nhanVienTaoQuyDinh = relationship('QuyDinh', backref='nhanvien', lazy=True)
+class Saving(db.Model):
+    savingID = Column(Integer, primary_key=True, autoincrement=True)
+    savingTypeID = Column(Integer, ForeignKey(SavingType.savingTypeID), nullable=False)
+    customerID = Column(String(50), ForeignKey(Customer.identityNumber),  nullable=False)
+    createDate = Column(DateTime, default=datetime.now(), nullable=False)
+    balanceAmount = Column(Float, nullable=False)
+    allowWithdrawDate = Column(DateTime, nullable=False)
+    withdrawal = relationship('WithdrawalForm', backref='saving', lazy=True)
+    deposit = relationship('DepositForm', backref='saving', lazy=True)
 
     def __str__(self):
-        return self.tenNV
+        return str(self.savingID)
+
+
+class Position(db.Model):
+    posID = Column(Integer, primary_key=True, autoincrement=True)
+    posName = Column(String(50), nullable=False)
+    pos = relationship('Employee', backref='position', lazy=True)
+
+    def __str__(self):
+        return self.posName
+
+
+class Employee(db.Model, UserMixin):
+    identityNumber = Column(String(12), primary_key=True)
+    employeeName = Column(String(50), nullable=False)
+    account = Column(String(20), nullable=False)
+    password = Column(String(255), default='e10adc3949ba59abbe56e057f20f883e', nullable=False)
+    positionID = Column(Integer, ForeignKey(Position.posID), nullable=False)
+    lastActive = Column(DateTime, nullable=True)
+    depositForm = relationship('DepositForm', backref='employee', lazy=True)
+    withdrawalForm = relationship('WithdrawalForm', backref='employee', lazy=True)
+    regulation = relationship('RegulationDetail', backref='employee', lazy=True)
+
+    def __str__(self):
+        return self.employeeName
 
     def get_id(self):
-        return self.maNV
+        return self.identityNumber
 
 
-class QuyDinh(db.Model):
-    id = Column(Integer, primary_key=True, autoincrement=True)
-    tenQuyDinh = Column(String(50), nullable=False)
-    giaTriQuyDinh = Column(Float, nullable=False)
-    ngayApDung = Column(DateTime, nullable=True)
-    nhanVienTao = Column(Integer, ForeignKey(NhanVien.maNV), nullable=False)
+class Regulation(db.Model):
+    regulationID = Column(Integer, primary_key=True, autoincrement=True)
+    regulationName = Column(String(50), nullable=False)
+    regulationDetail = relationship('RegulationDetail', backref='regulation', lazy=False)
+
+    def __str__(self):
+        return self.regulationName
 
 
-class PhieuRutTien(db.Model):
-    maPhieu = Column(Integer, primary_key=True, autoincrement=True)
-    maSo = Column(Integer, ForeignKey(SoTietKiem.maSo), nullable=False)
-    ngayRut = Column(DateTime, nullable=False)
-    soTienRut = Column(Float, nullable=False)
-    nhanVien = Column(Integer, ForeignKey(NhanVien.maNV), nullable=False)
+class RegulationDetail(db.Model):
+    regulationID = Column(Integer, ForeignKey(Regulation.regulationID), primary_key=True)
+    value = Column(Float, nullable=False)
+    applyDate = Column(DateTime, primary_key=True,)
+    employeeCreated = Column(String(12), ForeignKey(Employee.identityNumber), nullable=False)
 
 
-class PhieuGuiTien(db.Model):
-    maPhieu = Column(Integer, primary_key=True, autoincrement=True)
-    maSo = Column(Integer, ForeignKey(SoTietKiem.maSo), nullable=False)
-    ngayGui = Column(DateTime, nullable=False)
-    soTienGui = Column(Float, nullable=False)
-    nhanVien = Column(Integer, ForeignKey(NhanVien.maNV), nullable=False)
+class WithdrawalForm(db.Model):
+    formID = Column(Integer, primary_key=True, autoincrement=True)
+    savingID = Column(Integer, ForeignKey(Saving.savingID), nullable=False)
+    withdrawDate = Column(DateTime, default=datetime.now(), nullable=False)
+    amount = Column(Float, nullable=False)
+    employeeCreated = Column(String(12), ForeignKey(Employee.identityNumber), nullable=False)
 
 
-
-class LoaiTietKiemView(AuthenticatedView):
-    column_labels = dict(maLoaiTK='Mã loại tiết kiệm', tenLoaiTK='Tên loại tiết kiệm', kyHan='Kỳ hạn', laiSuat='Lãi suất', ngayApDung='Ngày áp dụng')
-    column_exclude_list = ('loaiTietKiem', )
-
-class SoTietKiemView(AuthenticatedView):
-    column_labels = dict(maSo='Mã sổ', khachHang='Tên khách hàng', CMND='Số CMND', diaChi='Địa chỉ', ngayMoSo='Ngày mở sổ', soTienGui='Số tiền gửi', soLanDaoHan='Số lần đáo hạn')
-
-
-class PhieuGuiTienView(AuthenticatedView):
-    column_labels = dict(maPhieu='Mã phiếu', ngayGui='Ngày gửi', soTienGui='Số tiền gửi')
+class DepositForm(db.Model):
+    formID = Column(Integer, primary_key=True, autoincrement=True)
+    savingID = Column(Integer, ForeignKey(Saving.savingID), nullable=False)
+    depositDate = Column(DateTime, default=datetime.now(), nullable=False)
+    amount = Column(Float, nullable=False)
+    employeeCreated = Column(String(12), ForeignKey(Employee.identityNumber), nullable=False)
 
 
-class PhieuRutTienView(AuthenticatedView):
-    column_labels = dict(maPhieu='Mã phiếu', ngayRut='Ngày rút', soTienRut='Số tiền rút')
+class SavingTypeView(AuthenticatedView):
+    column_labels = dict(savingName='Saving Name', term='Term', interestRate='Interest Rate', applyDate='Apply Date')
+    column_exclude_list = ('savingTypeID', )
+    form_columns = ('savingName', 'term', 'interestRate', 'applyDate')
 
 
-class NhanVienView(AuthenticatedView):
-    column_labels = dict(maNV='Mã nhân viên', tenNV='Tên nhân viên', CMND='Số CMND', taiKhoan='Tên tài khoản', matKhau='Mật khẩu', lanTruyCapGanNhat='Lần truy cập gần nhất')
+class SavingView(AuthenticatedView):
+    column_labels = dict(savingID='Saving ID', customer='Customer', createDate='Create Date',
+                         balanceAmount='Balance Amount', allowWithdrawDate='Allowed Withdraw Date', savingtype='Saving Type')
+    form_columns = ('customer', 'balanceAmount', 'allowWithdrawDate', 'savingtype')
 
 
-class ChucVuView(AuthenticatedView):
-    column_labels = dict(maCV='Mã chức vụ', tenCV='Tên chức vụ')
+class DepositFormView(AuthenticatedView):
+    column_labels = dict(formID='Form ID', depositDate='Date', amount='Amount')
+    form_columns = ('saving', 'amount', 'employee')
 
 
-class QuyDinhView(AuthenticatedView):
-    column_labels = dict(id='Mã quy định', tenQuyDinh='Mã quy định', giaTriQuyDinh='Giá trị quy định', ngayApDung='Ngày áp dụng')
+class WithdrawalFormView(AuthenticatedView):
+    column_labels = dict(formID='Form ID', withdrawDate='Date', amount='Amount')
+    form_columns = ('saving', 'amount', 'employee')
+
+
+class EmployeeView(AuthenticatedView):
+    column_labels = dict(identityNumber='Identity Number', employeeName='Employee Name', account='Account',
+                         lastActive='Last Active')
+    column_exclude_list = ('password', )
+    form_columns = ('identityNumber', 'employeeName', 'account', 'position')
+
+
+class PositionView(AuthenticatedView):
+    column_labels = dict(posID='ID', posName='Position Name')
+    form_columns = ('posName', )
+
+
+class RegulationView(AuthenticatedView):
+    column_labels = dict(applyDate='Apply Date')
+    form_columns = ('regulation', 'value', 'applyDate', 'employee')
+
+
+class CustomerView(AuthenticatedView):
+    column_labels = dict(identityNumber='Identity Number', customerName='Customer Name')
+    form_columns = ('identityNumber', 'customerName', 'address')
 
 
 class LogoutView(BaseView):
@@ -129,14 +164,16 @@ class LogoutView(BaseView):
         return current_user.is_authenticated
 
 
-admin.add_view(SoTietKiemView(SoTietKiem, db.session, name="Sổ tiết kiệm"))
-admin.add_view(LoaiTietKiemView(LoaiTietKiem, db.session, name="Loại tiết kiệm"))
-admin.add_view(PhieuGuiTienView(PhieuGuiTien, db.session, name="Phiếu gửi tiền"))
-admin.add_view(PhieuRutTienView(PhieuRutTien, db.session, name="Phiếu rút tiền"))
-admin.add_view(NhanVienView(NhanVien, db.session, name="Nhân viên"))
-admin.add_view(ChucVuView(ChucVu, db.session, name="Chức vụ"))
-admin.add_view(QuyDinhView(QuyDinh, db.session, name="Quy định"))
-admin.add_view(LogoutView(name="Đăng xuất"))
+admin.add_view(SavingTypeView(SavingType, db.session, name='Saving Type'))
+admin.add_view(SavingView(Saving, db.session))
+admin.add_view(DepositFormView(DepositForm, db.session, name="Deposit Form"))
+admin.add_view(WithdrawalFormView(WithdrawalForm, db.session, name="Withdrawal Form"))
+admin.add_view(EmployeeView(Employee, db.session))
+admin.add_view(PositionView(Position, db.session))
+admin.add_view(CustomerView(Customer, db.session))
+admin.add_view(RegulationView(RegulationDetail, db.session, name="Regulation"))
+admin.add_view(LogoutView(name="Logout"))
+#admin.add_view(ModelView(Regulation, db.session))
 
 if __name__ == "__main__":
     db.create_all()

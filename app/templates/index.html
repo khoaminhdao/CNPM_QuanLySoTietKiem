@@ -43,30 +43,38 @@
 		<div class="nav-warp">
 			<div class="user-panel">
 				{% if current_user.is_authenticated %}
-				<a href="/logout" title="Đăng xuất">
-					<h3>{{ current_user.tenNV }}</h3>
-							Logout
-				</a>
-
+				<div class="dropdown" id="lightdropdown">
+				  <div class="dropdown-select">
+					<h3 style="display:inline" class="dropdown-selected">{{ current_user.employeeName }}</h3>
+					<i class="fa fa-angle-down dropdown-caret"></i>
+				  </div>
+				  <ul class="dropdown-list">
+					<li class="dropdown-item" >
+					 <a id="changePass" onclick="changePassShow" title="Đổi mật khẩu">Change password</a>
+					</li>
+					<li class="dropdown-item">
+					  <a href="/logout" title="Đăng xuất">Logout</a>
+					</li>
+				  </ul>
+				</div>
 				{% else %}
 				<a href="login" id="loginLink" title="Đăng nhập">Login</a>
 				{% endif %}
-				<!--/
-				<a href="#">Register</a>
-				-->
+
 			</div>
 			<ul class="main-menu">
 				<li><a href="/" title="Trang chủ">Home</a></li>
-				<li><a href="/moso" title="Mở sổ tiết kiệm">Create saving</a></li>
-				<li><a href="/guitien" title="Lập phiếu gửi tiền">Create deposit form</a></li>
-				<li><a href="/ruttien" title="Lập phiếu rút tiền">Create withdrawal form</a></li>
-				<li><a href="/tracuu" title="Tra cứu">Search</a></li>
-				<li><a href="/thongke" title="Báo cáo/Thống kê">Report</a></li>
+				<li><a href="/create_saving" title="Mở sổ tiết kiệm">Create saving</a></li>
+				<li><a href="/create_deposit_form" title="Lập phiếu gửi tiền">Create deposit form</a></li>
+				<li><a href="/create_withdrawal_form" title="Lập phiếu rút tiền">Create withdrawal form</a></li>
+				<li><a href="/search" title="Tra cứu">Search</a></li>
+				<li><a href="/report" title="Báo cáo/Thống kê">Report</a></li>
 			</ul>
 		</div>
 	</header>
 	<!-- Header section end -->
 	{% endblock %}
+
 
 	{% block body %}
 	<!-- Hero section -->
@@ -160,7 +168,7 @@
 
                     Username:
 
-                    <input type="text" name="username" id="username" placeholder="Nhập tài khoản.." required="required" />
+                    <input type="text" name="username" id="username" placeholder="Input account.." required="required" />
 
                 </label>
 
@@ -168,11 +176,59 @@
 
                     Password:
 
-                    <input type="password" name="password" id="password" placeholder="Nhập mật khẩu.." required="required" />
+                    <input type="password" name="password" id="password" placeholder="Input password.." required="required" />
 
                 </label>
 
                 <button type="submit" class="site-btn" title="Đăng nhập" >Sign in</button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+		</form>
+
+
+	<form method="post">
+
+	<div class="overlayPass" style="display: none;">
+
+    <div class="login-wrapper">
+
+        <div class="login-content">
+
+            <a class="close">x</a>
+
+            <h3>Change password</h3>
+
+            <form method="post">
+
+                <label> Password:
+
+                    <input type="password" name="username" id="password_change" placeholder="Input your password.." required="required" />
+
+                </label>
+
+                <label>
+
+                    Password:
+
+                    <input type="password" name="password" id="new_password" placeholder="Input new password.." required="required" />
+
+                </label>
+
+				<label>
+
+                    Confirm password:
+
+                    <input type="password" name="password" id="confirm_password" placeholder="Confirm new password.." required="required" />
+
+                </label>
+
+                <button type="submit" class="site-btn" title="Đổi mật khẩu" >Change password</button>
 
             </form>
 
@@ -189,7 +245,8 @@
 	<script src="{{ url_for('static', filename='js/owl.carousel.min.js') }}"></script>
 	<script src="{{ url_for('static', filename='js/circle-progress.min.js') }}"></script>
 	<script src="{{ url_for('static', filename='js/main.js') }}"></script>
-	<script src="{{ url_for('static', filename='js/login.js') }}"></script>
+	<!--<script src="{{ url_for('static', filename='js/login.js') }}"></script>-->
+	<script src="{{ url_for('static', filename='js/changePass.js') }}"></script>
 
 	</body>
 </html>
