@@ -6,6 +6,7 @@ from flask_login import login_user, login_required
 from app import app, login, dao
 from app.models import *
 
+
 @login.user_loader
 def user_load(identityNumber):
     return Employee.query.get(identityNumber)
@@ -17,7 +18,8 @@ def login():
         username = request.form.get("username")
         password = request.form.get("password")
         password = str(hashlib.md5(password.strip().encode("utf-8")).hexdigest())
-        user = Employee.query.filter(Employee.account == username.strip(), Employee.password == password.strip()).first()
+        user = Employee.query.filter(Employee.account == username.strip(),
+                                     Employee.password == password.strip()).first()
         if user:
             login_user(user=user)
             dao.save_Activity()
@@ -47,49 +49,59 @@ def logout():
     return redirect("/")
 
 
-@app.route("/moso", methods=['GET', 'POST'])
+@app.route("/create_saving", methods=['GET', 'POST'])
 @login_required
-def moso():
+def create_saving():
+    notification = ""
     if request.method == 'POST':
-       if dao.them_STK(**dict(request.form)):
-         return redirect("/moso")
+        if dao.add_Saving(**dict(request.form)):
+            notification = "Created successfully!"
+        else:
+            notification = "Cannot create!!"
+    return render_template("create-saving.html", savingtype=dao.read_Type(),  notification=notification)
 
-    return render_template("moso.html", loaitietkiem=dao.read_Loai())
 
-
-@app.route("/guitien", methods=['GET', 'POST'])
+@app.route("/create_deposit_form", methods=['GET', 'POST'])
 @login_required
-def guitien():
+def create_deposit():
+    notification = ""
     if request.method == 'POST':
-       if dao.them_PhieuGuiTien(**dict(request.form)):
-         return redirect("/guitien")
+        if dao.add_DepositForm(**dict(request.form)):
+            notification = "Created successfully!"
+        else:
+            notification = "Cannot create!!"
 
-    return render_template("guitien.html", dsso=dao.read_STK_KKH())
+    return render_template("create-deposit.html", savingList=dao.read_NoTerm_Saving(), notification=notification)
 
 
-@app.route("/ruttien", methods=['GET', 'POST'])
+@app.route("/create_withdrawal_form", methods=['GET', 'POST'])
 @login_required
-def ruttien():
+def create_withdrawal():
+    notification = ""
     if request.method == 'POST':
-       if dao.them_PhieuRutTien(**dict(request.form)):
-         return redirect("/ruttien")
+        if dao.add_WithdrawalForm(**dict(request.form)):
+            notification = "Created successfully!"
+        else:
+            notification = "Cannot create!!"
 
-    return render_template("ruttien.html", dsso=dao.read_STK_DuocRut())
+    return render_template("create-withdrawal.html", savingList=dao.read_WithdrawAllowed_Saving(), notification=notification)
 
 
 @app.route("/tracuu", methods=['GET', 'POST'])
 @login_required
 def tracuu():
     if request.method == 'POST':
-       if dao.them_PhieuRutTien(**dict(request.form)):
-         return redirect("/tracuu")
+        if dao.them_PhieuRutTien(**dict(request.form)):
+            return redirect("/tracuu")
 
     return render_template("tracuu.html", dsso=dao.read_STK())
+
 
 @app.route("/thongke", methods=['GET'])
 @login_required
 def thongke():
     return render_template("thongke.html")
 
+
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=False)

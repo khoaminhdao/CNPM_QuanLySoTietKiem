@@ -7,34 +7,36 @@
                         <h2 style="font-size:40px; margin-bottom: 40px">Create saving</h2>
 
                         <label style="color:#FFFFFF"> Customer name:
-                            <input type="text" name="name" id="name" placeholder="Input customer name.." required="required" />
+                            <input type="text" name="customerName" placeholder="Input customer name.." required="required" />
                         </label>
 
                         <label style="color:#FFFFFF"> Identity card number:
-                            <input type="text" name="CMND" id="CMND" placeholder="Input customer identitycard number.." pattern="{9, 12}" required="required" />
+                            <input type="text" name="identityNumber" placeholder="Input customer identitycard number.." pattern="[0-9]{9, 12}" required="required" />
                         </label>
 
                         <label style="color:#FFFFFF"> Address:
-                            <input type="text" name="address" id="address" placeholder="Input customer address.." required="required" />
+                            <input type="text" name="address" placeholder="Input customer address.." required="required" />
                         </label>
 
                         <label style="color:#FFFFFF"> Deposit amount (VNĐ):
-                            <input type="number" step="100000" name="amount" id="amount" placeholder="Input amount of money.." required="required" />
+                            <input type="number" step="100000" name="amount" placeholder="Input amount of money.." required="required" />
                         </label>
 
                         <label style="color:#FFFFFF"> Saving type:
-                            <select class="form-control" name="loaitietkiem" style="font-size:12px; height:30px; width: 250px;
-                                margin-top:8px; margin-bottom: 40px" required="required" >
-                            {% for loai in loaitietkiem %}
-                                <option value="{{ loai.maLoaiTK }}">{{ loai.tenLoaiTK }}</option>
+                            <select class="form-control" name="savingType" style="font-size:12px; height:30px; width: 250px;
+                                margin-top:8px; margin-bottom: 20px" required="required" >
+                            {% for type in savingtype %}
+                                <option value="{{ type.savingTypeID }}">{{ type.savingName }}</option>
                             {% endfor %}
                             </select>
                         </label>
 
+                        <div style="margin-left: 40px; font-size:15px">{{ notification }}</div>
+
 						<button type="submit" style="color: white; padding: 1.5rem; width: 100%;
                             max-width: 25rem; border-radius: 5rem; border: 0; outline: none; cursor: pointer; text-align: center;
                             font-weight: 500; white-space: nowrap; letter-spacing: 1px; background-color: #7b78f8;
-                            box-shadow: 0 10px 20px 0 rgba(123, 120, 248, 0.5); margin-left: 10px">Create</button>
+                            box-shadow: 0 10px 20px 0 rgba(123, 120, 248, 0.5); margin-left: 10px; margin-top: 20px">Create</button>
 
                     </form>
 				<div class="hero-rocket">

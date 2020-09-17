@@ -8,27 +8,21 @@
 						<h2 style="font-size:40px; margin-bottom: 40px">Deposit form</h2>
 
                          <label>Saving ID:
-                            <select class="form-control" name="maSo" onchange="chonSo(this)" style="font-size:12px;
-                            height:30px; width: 235px; margin-top:8px;" required="required" >
-                            {% for so in dsso %}
-                                <option value="{{ so.maSo }}">{{ so.maSo }}</option>
+                            <select class="form-control" name="savingID" style="font-size:12px;
+                            height:30px; width: 235px; margin-top: 15px; margin-bottom: 20px" required="required" >
+                            {% for saving in savingList %}
+                                <option value="{{ saving.savingID }}">{{ saving.savingID }} &nbsp;&nbsp;&nbsp;&nbsp; {{saving.customer.customerName}} </option>
                             {% endfor %}
                             </select>
                         </label>
 
-                        <label> Customer name:
-                             <select disabled class="form-control" id="name" onchange="chonSo(this)"
-                                     style="font-size:12px; height:30px; width: 235px" required="required" >
-                            {% for so in dsso %}
-                                <option value="{{ so.maSo }}">{{ so.khachHang }}</option>
-                            {% endfor %}
-                            </select>
-                        </label>
 
                         <label> Deposit amount (VNĐ):
                             <input type="number" name="amount" id="amount" placeholder="Input amount of money.."
                                    min="100000" step="1000" required="required" />
                         </label>
+
+                        <div style="margin-left: 40px; font-size:15px; margin-top:20px;">{{ notification }}</div>
 
 						<button type="submit" style="color: white; padding: 1.5rem; width: 100%;
                             max-width: 25rem; border-radius: 5rem; border: 0; outline: none; cursor: pointer; text-align: center;
@@ -43,12 +37,4 @@
 			</div>
 		</div>
 	</section>
-     <script language="javascript">
-         function chonSo(obj)
-         {
-            var name = document.getElementById('name');
-            var value = obj.value;
-            name.value = value;
-         }
-     </script>
 {% endblock %}

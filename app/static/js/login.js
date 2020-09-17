@@ -1,5 +1,15 @@
 $(document).ready(function() {
 
+
+    $("#changePass").click(function( event ){
+
+        event.preventDefault();
+
+        $(".overlayPass").fadeToggle("fast");
+
+    });
+
+
     $("#loginLink").click(function( event ){
 
         event.preventDefault();
@@ -7,7 +17,6 @@ $(document).ready(function() {
         $(".overlay").fadeToggle("fast");
 
     });
-
 
 
     $(".close").click(function(){

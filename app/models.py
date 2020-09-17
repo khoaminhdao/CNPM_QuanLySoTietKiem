@@ -43,12 +43,12 @@ class Saving(db.Model):
     customerID = Column(String(50), ForeignKey(Customer.identityNumber),  nullable=False)
     createDate = Column(DateTime, default=datetime.now(), nullable=False)
     balanceAmount = Column(Float, nullable=False)
-    allowWithdrawDate = Column(DateTime, nullable=False)
+    allowWithdrawDate = Column(DateTime,  nullable=False)
     withdrawal = relationship('WithdrawalForm', backref='saving', lazy=True)
     deposit = relationship('DepositForm', backref='saving', lazy=True)
 
     def __str__(self):
-        return str(self.savingID)
+        return str(self.savingID) + "\t" + self.customer.customerName
 
 
 class Position(db.Model):

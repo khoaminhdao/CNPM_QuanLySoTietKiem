@@ -1,11 +1,13 @@
 import sqlite3
 from datetime import datetime
+from monthdelta import monthdelta, timedelta
 
 from flask_login import current_user
-from sqlalchemy import or_
+from sqlalchemy import func, desc
+from sqlalchemy.orm import load_only
 
 from app import db
-from app.models import SavingType, Saving, DepositForm, Employee
+from app.models import SavingType, Saving, DepositForm, Employee, Customer, Regulation, RegulationDetail, WithdrawalForm
 
 
 def read_Type():
@@ -21,16 +23,34 @@ def read_NoTerm_Saving():
 
 
 def read_WithdrawAllowed_Saving():
-    return Saving.query.filter(Saving.savingTypeID == 1)
+    return Saving.query.filter(Saving.allowWithdrawDate <= datetime.now())
 
-#def add_Saving(customerName, identityNumber, address, amount, savingType):
-#    saving = Saving(savingTypeID=savingType, customerID=name, CMND=CMND, diaChi=address, ngayMoSo=datetime.now(), soTienGui=amount)
-#    db.session.add(stk)
-#    db.session.commit()
+
+def add_Saving(customerName, identityNumber, address, amount, savingType):
+    customer = Customer.query.get(identityNumber)
+    if not customer:
+        customer = Customer(identityNumber=identityNumber, customerName=customerName, address=address)
+        db.session.add(customer)
+        db.session.commit()
+
+    wDate = datetime.now()
+    term = SavingType.query.get(savingType).term
+    if term == 0:
+        regu = RegulationDetail.query.filter(RegulationDetail.regulationID == 2 and RegulationDetail.applyDate <=
+                                                datetime.now()).order_by(desc(RegulationDetail.applyDate)).limit(1).first()
+        wDate += timedelta(days=int(regu.value))
+    else:
+        wDate += monthdelta(term)
+
+    saving = Saving(savingTypeID=savingType, customerID=identityNumber, balanceAmount=amount, allowWithdrawDate=wDate)
+    db.session.add(saving)
+    db.session.commit()
+    return True
 
 
 def add_DepositForm(savingID, amount):
-    depositForm = DepositForm(savingID=savingID, depositDate=datetime.now(), amount=amount, employeeCreated=current_user.identityNumber)
+    depositForm = DepositForm(savingID=savingID, depositDate=datetime.now(), amount=amount,
+                              employeeCreated=current_user.identityNumber)
     db.session.add(depositForm)
     db.session.commit()
 
@@ -38,10 +58,11 @@ def add_DepositForm(savingID, amount):
     saving.balanceAmount += float(amount)
     db.session.add(saving)
     db.session.commit()
+    return True
 
 
 def add_WithdrawalForm(savingID, amount):
-    withdrawalForm = DepositForm(savingID=savingID, depositDate=datetime.now(), amount=amount, employeeCreated=current_user.identityNumber)
+    withdrawalForm = WithdrawalForm(savingID=savingID, depositDate=datetime.now(), amount=amount, employeeCreated=current_user.identityNumber)
     db.session.add(withdrawalForm)
     db.session.commit()
 
@@ -49,6 +70,7 @@ def add_WithdrawalForm(savingID, amount):
     saving.balanceAmount -= float(amount)
     db.session.add(saving)
     db.session.commit()
+    return True
 
 
 def save_Activity():
