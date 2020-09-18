@@ -1,0 +1,63 @@
+{% extends 'index.html' %}
+{% block body %}
+<section class="hero-section set-bg" data-setbg="{{ url_for('static', filename='img/bg.jpg') }}">
+		<div class="container h-100">
+			<div class="hero-content text-white"/>
+                    <form method="post">
+
+						<h2 style="font-size:40px; margin-bottom: 40px">Withdrawal form</h2>
+
+                         <label>Saving ID:
+                            <select class="form-control" name="savingID" style="font-size:12px;
+                            height:30px; width: 235px; margin-top: 15px; margin-bottom: 20px" onclick="changeMax(this)" required="required" >
+                                <option id="undefined" value="undefined">Choose saving to withdraw</option>
+                            {% for saving in savingList %}
+                                <option value="{{ saving.savingID }}"> {{ saving.savingID }} &nbsp;&nbsp;&nbsp;&nbsp; {{saving.customer.customerName}}</option>
+                            {% endfor %}
+                            </select>
+                        </label>
+
+
+                        <label>Balance amount (VNĐ):
+                            <select class="form-control" id="max" style="font-size:12px;
+                            height:30px; width: 235px; margin-top: 15px; margin-bottom: 20px" disabled required>
+                                <option value="undefined"></option>
+                                {% for saving in savingList %}
+                                    <option value="{{ saving.savingID }}"> {{ saving.balanceAmount  }} </option>
+                                {% endfor %}
+                            </select>
+                        </label>
+
+
+                        <label> Deposit amount (VNĐ):
+                            <input type="number" name="amount" id="amount" style="width: 235px" placeholder="Input amount of money.."
+                                  min="1000" step="1000" style="width: 235px" required="required" />
+                        </label>
+
+                        <div style="margin-left: -50px; font-size:15px; margin-top:20px;">{{ notification }}</div>
+
+						<button type="submit" style="color: white; padding: 1.5rem; width: 100%;
+                            max-width: 25rem; border-radius: 5rem; border: 0; outline: none; cursor: pointer; text-align: center;
+                            font-weight: 500; white-space: nowrap; letter-spacing: 1px; background-color: #7b78f8;
+                            box-shadow: 0 10px 20px 0 rgba(123, 120, 248, 0.5); margin-left: 8px; margin-top: 30px">Submit</button>
+
+                    </form>
+				</div>
+				<div class="hero-rocket">
+					<img src="{{ url_for('static', filename='img/rocket.png') }}" alt="">
+				</div>
+			</div>
+		</div>
+	</section>
+    <script>
+        function changeMax(object)
+        {
+            amount = document.getElementById("amount");
+            max = document.getElementById("max");
+            max.value = object.value;
+            amount.max = parseFloat(max.innerText);
+
+            document.getElementById("undefined").disabled = true;
+        }
+    </script>
+{% endblock %}

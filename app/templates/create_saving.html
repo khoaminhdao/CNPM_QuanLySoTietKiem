@@ -7,19 +7,19 @@
                         <h2 style="font-size:40px; margin-bottom: 40px">Create saving</h2>
 
                         <label style="color:#FFFFFF"> Customer name:
-                            <input type="text" name="customerName" placeholder="Input customer name.." required="required" />
+                            <input type="text" name="customerName" style="width: 250px" placeholder="Input customer name.." required="required" />
                         </label>
 
                         <label style="color:#FFFFFF"> Identity card number:
-                            <input type="text" name="identityNumber" placeholder="Input customer identitycard number.." pattern="[0-9]{9, 12}" required="required" />
+                            <input type="text" name="identityNumber" style="width: 250px" placeholder="Input customer identitycard number.." pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{9, }" required="required" />
                         </label>
 
                         <label style="color:#FFFFFF"> Address:
-                            <input type="text" name="address" placeholder="Input customer address.." required="required" />
+                            <input type="text" name="address" style="width: 250px" placeholder="Input customer address.." required="required" />
                         </label>
 
                         <label style="color:#FFFFFF"> Deposit amount (VNĐ):
-                            <input type="number" step="100000" name="amount" placeholder="Input amount of money.." required="required" />
+                            <input type="number" step="100000" name="amount" style="width: 250px" placeholder="Input amount of money.." required="required" />
                         </label>
 
                         <label style="color:#FFFFFF"> Saving type:
@@ -31,7 +31,7 @@
                             </select>
                         </label>
 
-                        <div style="margin-left: 40px; font-size:15px">{{ notification }}</div>
+                        <div style="margin-left: -50px; font-size:15px">{{ notification }}</div>
 
 						<button type="submit" style="color: white; padding: 1.5rem; width: 100%;
                             max-width: 25rem; border-radius: 5rem; border: 0; outline: none; cursor: pointer; text-align: center;

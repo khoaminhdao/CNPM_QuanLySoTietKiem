@@ -1,0 +1,49 @@
+{% extends 'index.html' %}
+{% block body %}
+<section class="hero-section set-bg" data-setbg="{{ url_for('static', filename='img/bg.jpg') }}">
+    <div class="hero-content text-white"/>
+        <div class="row" style="margin-top: 100px; margin-left: 300px">
+                <h2>Search</h2>
+                <form class="form-inline"  method="post">
+                    <select class="custom-select" name="savingType" style="height: 30px; margin-left: 150px; margin-top: 30px">
+                        {% for savingType in savingTypeList %}
+                        <option value="{{ savingType.savingTypeID }}">{{ savingType.savingName }}</option>
+                        {% endfor %}
+                    </select>
+                    &emsp;
+                   <input class="form-control mr-sm-2" type="number" placeholder="Mã sổ" aria-label="Search"
+                           name="savingID" maxlength="15" style="height: 25px; margin-left: 10px; margin-top: 40px"
+                           oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+                    <input type="submit" class="btn btn-light" style="height: 30px; margin-left: 10px; margin-top: 30px" value="Tìm kiếm">
+                </form>
+            </nav>
+            <table class="table table-striped text-white" style="overflow-y: scroll; height:500px; display:block; margin-right: 600px; margin-left: 320px">
+                <thead>
+                <tr>
+                    <th scope="col">Saving ID</th>
+                    <th scope="col">Customer Name</th>
+                    <th scope="col">Saving Type</th>
+                    <th scope="col">Balance Amount</th>
+                    <th scope="col">Created Date</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for saving in savingList %}
+                <tr>
+                    <th scope="row">{{  saving.savingID }}</th>
+                    <td>{{ saving.customer.customerName }}</td>
+                    <td>{{ saving.savingtype.savingName }}</td>
+                    <td>{{ "{:,.0f}".format(saving.balanceAmount) }} VNĐ</td>
+                    <td>{{ saving.createDate }}</td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+</div>
+</section>
+
+<script>
+
+</script>
+{% endblock %}

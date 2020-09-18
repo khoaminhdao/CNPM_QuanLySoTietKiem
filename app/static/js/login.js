@@ -1,11 +1,18 @@
 $(document).ready(function() {
 
 
+      if($("#notification").text() != "")
+            if($("#notification").text() == "Account or password is wrong!!" || $("#notification").text() == "You must login!!")
+                $("#overlay").fadeToggle("fast");
+            else
+                $("#overlayPass").fadeToggle("fast");
+
+
     $("#changePass").click(function( event ){
 
         event.preventDefault();
 
-        $(".overlayPass").fadeToggle("fast");
+        $("#overlayPass").fadeToggle("fast");
 
     });
 
@@ -14,14 +21,22 @@ $(document).ready(function() {
 
         event.preventDefault();
 
-        $(".overlay").fadeToggle("fast");
+        $("#overlay").fadeToggle("fast");
 
     });
 
 
     $(".close").click(function(){
 
-        $(".overlay").fadeToggle("fast");
+       if($("#overlay").css("display") != "none" ) {
+
+            $("#overlay").fadeToggle("fast");
+       }
+
+       else if($("#overlayPass").css("display") != "none" ) {
+
+            $("#overlayPass").fadeToggle("fast");
+       }
 
     });
 
@@ -29,13 +44,22 @@ $(document).ready(function() {
 
     $(document).keyup(function(e) {
 
-        if(e.keyCode == 27 && $(".overlay").css("display") != "none" ) {
+        if(e.keyCode == 27)
+            /* if($("#overlay").css("display") != "none" ) {
 
-            event.preventDefault();
+                event.preventDefault();
 
-            $(".overlay").fadeToggle("fast");
+                $("#overlay").fadeToggle("fast");
 
-        }
+            }
+
+            else */ if($("#overlayPass").css("display") != "none" ){
+
+                event.preventDefault();
+
+                $("#overlayPass").fadeToggle("fast");
+            }
+
 
     });
 

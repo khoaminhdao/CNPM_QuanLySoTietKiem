@@ -1,0 +1,68 @@
+{% extends 'index.html' %}
+{% block body %}
+<section class="hero-section set-bg" data-setbg="{{ url_for('static', filename='img/bg.jpg') }}">
+		<div class="container h-100">
+			<div class="hero-content text-white">
+				<div class="row">
+					<div class="col-lg-6 pr-0">
+                        <div id="chartNoTerm" style="width: 400px; height: 500px; display: inline"></div>
+						<div id="chart3Months" style="width: 400px; height: 500px; display: inline;"></div>
+						<div id="chart6Months" style="width: 400px; height: 500px; display: inline;"></div>
+					</div>
+				</div>
+				<div class="hero-rocket">
+					<img src="{{ url_for('static', filename='img/rocket.png') }}" alt="">
+				</div>
+			</div>
+		</div>
+	</section>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var dataNoTerm = google.visualization.arrayToDataTable([
+          ['Type', 'Value'],
+          ['Collect', 3000000],
+          ['Spend',   1000000],
+        ]);
+
+        var optionsNoTerm = {
+          title: 'No term',
+          is3D: true,
+        };
+
+        var chartNoTerm = new google.visualization.PieChart(document.getElementById('chartNoTerm'));
+        chartNoTerm.draw(dataNoTerm, optionsNoTerm);
+
+        var data3Months = google.visualization.arrayToDataTable([
+         ['Type', 'Value'],
+          ['Collect', 3000000],
+          ['Spend',   1000000],
+        ]);
+
+        var options3Months = {
+          title: '3 Months',
+          is3D: true,
+        };
+
+        var chart3Months = new google.visualization.PieChart(document.getElementById('chart3Months'));
+        chart3Months.draw(data3Months, options3Months);
+
+        var data6Months = google.visualization.arrayToDataTable([
+          ['Type', 'Value'],
+          ['Collect', 3000000],
+          ['Spend',   1000000],
+        ]);
+
+        var options6Months = {
+          title: '6 Months',
+          is3D: true,
+        };
+
+        var chart6Months = new google.visualization.PieChart(document.getElementById('chart6Months'));
+        chart6Months.draw(data6Months, options6Months);
+      }
+    </script>
+{% endblock %}
